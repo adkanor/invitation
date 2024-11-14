@@ -1,8 +1,9 @@
 
+import PersonalisedInvitation from "./components/pages/PersonalisedInvitation"
 function App() {
   return (
     <div className="App">
-    This is start of invitation
+   <PersonalisedInvitation></PersonalisedInvitation>
     </div>
   );
 }
