@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'; // Import useParams to extract URL
 import guests from '../../data/guests';
 import {useTranslation} from 'react-i18next'
 import i18n from '../../utils/i18n'; 
+import styles from "./PersonalisedInvitation.module.css"
+
 
 function PersonalisedInvitation () {
 
@@ -22,6 +24,8 @@ const guestName = guestInfo.name[language] || guestInfo.name.en;
 
 return (
 <>
+<p className={styles.try_fonts}>Try fonts it is trying</p>
+<p>Try fonts it is trying</p>
     <div>Personalised invitation </div>
     <p>Welcome to our wedding!</p>
     <p>BELLOW IS TEST</p>

@@ -1,13 +1,45 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Cormorant Garamond','Merriweather', 'Palatino Linotype', serif;
+  background-color: #f9f9f4; 
+  color: #2d4a69; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 300; 
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('./assets/fonts/CormorantGaramond-Regular.woff2') format('woff2'),
+       url('./assets/fonts/CormorantGaramond-Regular.woff') format('woff'),
+       url('./assets/fonts/CormorantGaramond-Regular.ttf') format('truetype');
+  font-weight: 400; /* Regular */
+  font-style: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('./assets/fonts/CormorantGaramond-Italic.woff2') format('woff2'),
+       url('./assets/fonts/CormorantGaramond-Italic.woff') format('woff'),
+       url('./assets/fonts/CormorantGaramond-Italic.ttf') format('truetype');
+  font-weight: 400; /* Regular Italic */
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('./assets/fonts/CormorantGaramond-MediumItalic.woff2') format('woff2'),
+       url('./assets/fonts/CormorantGaramond-MediumItalic.woff') format('woff'),
+       url('./assets/fonts/CormorantGaramond-MediumItalic.ttf') format('truetype');
+  font-weight: 500; /* Medium Italic */
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Tan Mon Cheri';
+  src: url('./assets/fonts/TAN-MONCHERI.woff2') format('woff2'),
+       url('./assets/fonts/TAN-MONCHERI.woff') format('woff'),
+       url('./assets/fonts/tan-mon-cheri.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }

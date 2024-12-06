@@ -1,0 +1,25 @@
+/* Основной текст перечень блюд голубым курсивом тонким*/
+/* .try_fonts{
+  font-size: 16px;
+  font-weight: 400; 
+  font-style: italic;
+} */
+
+
+ /* Текст для заголовков полужирный курсив оранжевый*/
+
+ /* .try_fonts{
+    font-size: 24px;
+    font-weight: 500; 
+    font-style: italic;
+    color: #ff914d;
+    text-transform: uppercase;}
+    */
+
+ /* Текст для основного заголовка жирный синий*/
+ .try_fonts{
+    font-family: 'Tan Mon Cheri';
+    font-size: 32px;
+    font-weight: 400; 
+    text-transform: uppercase;
+}
