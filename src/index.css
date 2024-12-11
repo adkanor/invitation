@@ -1,5 +1,4 @@
 body {
-  margin: 0;
   font-family: 'Cormorant Garamond','Merriweather', 'Palatino Linotype', serif;
   background-color: #f9f9f4; 
   color: #2d4a69; 
@@ -7,6 +6,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-weight: 300; 
   font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
 }
 @font-face {
   font-family: 'Cormorant Garamond';

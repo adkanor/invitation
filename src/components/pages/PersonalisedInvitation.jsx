@@ -4,7 +4,8 @@ import guests from '../../data/guests';
 import {useTranslation} from 'react-i18next'
 import i18n from '../../utils/i18n'; 
 import styles from "./PersonalisedInvitation.module.css"
-
+import LanguageSwitcher from "../ui/LanguageSwitcher/LanguageSwitcher"
+import PlaceOfWeddingInfo from "../ui/PlaceOfWeddingInfo/PlaceOfWedding"
 
 function PersonalisedInvitation () {
 
@@ -24,13 +25,16 @@ const guestName = guestInfo.name[language] || guestInfo.name.en;
 
 return (
 <>
-<p className={styles.try_fonts}>Try fonts it is trying</p>
+{/* <p className={styles.try_fonts}>Try fonts it is trying</p>
 <p>Try fonts it is trying</p>
     <div>Personalised invitation </div>
     <p>Welcome to our wedding!</p>
-    <p>BELLOW IS TEST</p>
+    <p>BELLOW IS TEST</p> */}
     <p>{t('welcome')}</p>
 <p>{guestName}</p>
+<LanguageSwitcher></LanguageSwitcher>
+
+<PlaceOfWeddingInfo></PlaceOfWeddingInfo>
 </>
 )
 

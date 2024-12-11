@@ -1,0 +1,37 @@
+.placeOfWeddingSection {
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 20px; 
+    box-sizing: border-box; 
+  }
+.placeOfWeddingPhoto{
+    position: relative;
+    height: 500px;
+    background-image: url('../../..//assets//images/Orange_viewPoint.webp'); /* Ваш URL картинки */
+    background-position: center; /* Центрирование картинки */
+    background-size: cover; /* Покрытие всей области без искажения */
+    background-attachment: fixed; /* Фиксируем фон для параллакса */
+    overflow: hidden; /* Убираем полосы прокрутки */
+  
+}
+.placeOfWeddingTitle{
+    font-size: 32px;
+    font-weight: 500; 
+    font-style: italic;
+    color: #ff914d;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.placeOfWeddingText{
+    margin: 0 auto;
+    font-size: 16px;
+    font-weight: 400; 
+    font-style: italic;
+    max-width: 500px;        
+    text-align: center; 
+     
+    word-wrap: break-word;
+
+}
