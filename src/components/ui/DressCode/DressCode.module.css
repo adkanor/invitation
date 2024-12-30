@@ -1,0 +1,48 @@
+.dresscodeSection {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 60px;
+}
+
+.dresscodeTitle {
+  font-size: 36px;
+  font-weight: 500;
+  font-style: italic;
+  color: #ff914d;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.dresscodeText {
+  margin: 0 auto;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+  max-width: 600px;
+  text-align: center;
+  word-wrap: break-word;
+  line-height: 1.5;
+}
+
+.dresscodeCircleSection {
+  margin: auto;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.dresscodeCircle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #ededed;
+}

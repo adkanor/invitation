@@ -1,77 +1,79 @@
 /* Основной контейнер */
 .languageSwitcher {
-    margin-left: 30px;
-    position: relative;
+  margin-left: 30px;
+  position: relative;
 
-   
-  }
-  
-  /* Кнопка для переключения языка */
-  .languageButton {
-    position: relative;
-    background-color: #2d4a69; 
-    margin-bottom: 3px;
-    width: 70px;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    text-align: center;
-  }
-  
-  .languageButton:hover {
-    background-color: #3a608a;
-  
-  }
-  .buttonIcon{
-    width: 12px;
-    height: 12px;
-    position: absolute;
-    top: 13px;
-    left: 20px;
 
-  }
+}
 
-  .arrowIcon{
-    width: 12px;
-    height: 12px;margin-left: 3px;
-   
-  }
-  /* Выпадающий список */
-  .languageDropdown {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100px;
-    background-color: #fff; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    overflow: hidden;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    z-index: 1000;
-  }
-  
-  /* Элементы выпадающего списка */
-  .languageDropdown li {
-    padding: 10px 15px;
-    cursor: pointer;
-    color: #333;
-    transition: background-color 0.3s ease;
-  }
-  
-  .languageDropdown li:hover {
-    background-color: #f1f1f1;
-  }
-  
-  /* Динамическое отображение активного языка */
-  .languageDropdown li.active {
-    background-color: #3a608a;
-    color: #fff;
-    font-weight: bold;
-  }
-  
+/* Кнопка для переключения языка */
+.languageButton {
+  position: relative;
+  background-color: #2d4a69;
+  margin-bottom: 3px;
+  width: 70px;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.languageButton:hover {
+  background-color: #3a608a;
+
+}
+
+.buttonIcon {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 13px;
+  left: 20px;
+
+}
+
+.arrowIcon {
+  width: 12px;
+  height: 12px;
+  margin-left: 3px;
+
+}
+
+/* Выпадающий список */
+.languageDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+}
+
+/* Элементы выпадающего списка */
+.languageDropdown li {
+  padding: 10px 15px;
+  cursor: pointer;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.languageDropdown li:hover {
+  background-color: #f1f1f1;
+}
+
+/* Динамическое отображение активного языка */
+.languageDropdown li.active {
+  background-color: #3a608a;
+  color: #fff;
+  font-weight: bold;
+}

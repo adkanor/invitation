@@ -6,6 +6,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-weight: 300; 
   font-style: normal;
+  overflow-x: hidden;
+  
 }
 * {
   margin: 0;
