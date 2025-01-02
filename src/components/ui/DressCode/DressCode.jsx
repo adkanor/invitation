@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from "./DressCode.module.css"
+import gsap from 'gsap';  // Подключаем GSAP
+
 const Dresscode = () => {
   const { t } = useTranslation();
 
@@ -15,9 +17,7 @@ const Dresscode = () => {
     { color: '#3a608a' },
     { color: '#2d4a69' },
     { color: '#000000' },
-
   ];
-
   return (
     <div className={styles.dresscodeSection}>
       <h2 className={styles.dresscodeTitle}>{t('dresscodeTitle')}</h2>

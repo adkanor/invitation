@@ -25,7 +25,18 @@ const resources = {
       weddingDinner: "Wedding dinner",
       weddingDinnerDescription: "A delicious wedding dinner to celebrate our love, with food, drinks, and laughter shared among friends and family.",
       dancing: "Dancing",
-      dancingDescription: "An evening of dancing, where we invite everyone to join us in celebrating the start of our new life together"
+      dancingDescription: "An evening of dancing, where we invite everyone to join us in celebrating the start of our new life together",
+      happyToSeeYou: "We will be happy to see you! ",
+      rsvpTitle: "RSVP",
+      rsvpDescription: "Наша весілля наближається, і ми хочемо переконатися, що ти зможеш бути з нами. Будь ласка, підтверди свою участь та пройди невелике опитування, щоб допомогти нам краще підготуватися.",
+      confirmAttendanceText: "We need to confirm your attendance.",
+      participateInSurvey: "Please take a quick survey to help us prepare better.",
+      confirmAndSurveyButton: "Confirm and Take Survey",
+      plan: "Plan",
+      venue: "Venue",
+      dressCode: "Dress Code",
+      invitation: "Invitation"
+
 
     },
   },
@@ -48,9 +59,18 @@ const resources = {
       weddingDinner: "Свадебный ужин",
       weddingDinnerDescription: "Вкусный свадебный ужин в честь нашей любви, с едой, напитками и смехом, разделёнными с друзьями и семьей.",
       dancing: "Танцы",
-      dancingDescription: "Вечер танцев, где мы приглашаем всех присоединиться к нам в праздновании начала нашей новой жизни вместе!"
-
-    },
+      dancingDescription: "Вечер танцев, где мы приглашаем всех присоединиться к нам в праздновании начала нашей новой жизни вместе!",
+      happyToSeeYou: "Мы будем рады вас видеть!",
+      rsvpTitle:"Приглашение",
+      rsvpDescription: "Наша весілля наближається, і ми хочемо переконатися, що ти зможеш бути з нами. Будь ласка, підтверди свою участь та пройди невелике опитування, щоб допомогти нам краще підготуватися.",
+      confirmAttendanceText: "Нам нужно подтвердить ваше присутствие.",
+      participateInSurvey: "Пожалуйста, пройдите небольшой опрос, чтобы помочь нам лучше подготовиться.",
+      confirmAndSurveyButton: "Подтвердить и пройти опрос",
+      plan: "План",
+      venue: "Место проведения",
+      dressCode: "Дресс код",
+      invitation: "Приглашение"
+    
   },
   ua: {
     translation: {
@@ -71,7 +91,18 @@ const resources = {
       weddingDinner: "Весільна вечеря",
       weddingDinnerDescription: "Смачний весільний обід на честь нашої любові, з їжею, напоями та сміхом, поділеними з друзями та родиною.",
       dancing: "Танці",
-      dancingDescription: "Вечір танців, на який ми запрошуємо всіх приєднатися до святкування початку нашого нового життя разом!"
+      dancingDescription: "Вечір танців, на який ми запрошуємо всіх приєднатися до святкування початку нашого нового життя разом!",
+      happyToSeeYou: "Ми будемо раді вас бачити!",
+      rsvpTitle: "Запрошення",
+      rsvpDescription: "Наша весілля наближається, і ми хочемо переконатися, що ти зможеш бути з нами. Будь ласка, підтверди свою участь та пройди невелике опитування, щоб допомогти нам краще підготуватися.",
+      confirmAttendanceText: "Ми були б дуже хотіли тебе бачити в наш особливий день!",
+      participateInSurvey: "Будь ласка, пройди коротке опитування, щоб допомогти нам краще підготуватися.",
+      confirmAndSurveyButton: "Підтвердити та пройти опитування",
+      plan: "План",
+      venue: "Місце проведення",
+      dressCode: "Дресс код",
+      invitation: "Запрошення"
+    }
     },
   },
 };

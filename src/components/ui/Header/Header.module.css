@@ -1,0 +1,40 @@
+/* Header.module.css */
+
+.header {
+    backdrop-filter: blur(4px); /* Размытие фона */
+    -webkit-backdrop-filter: blur(4px); /* Для Safari */
+    position: fixed; /* Фиксируем хедер */
+    top: 0; /* Приклеиваем к верхней части страницы */
+    left: 0; /* Убираем отступы слева */
+    width: 100%; /* Ширина 100% */
+    z-index: 9; /* Обеспечиваем, чтобы хедер был поверх контента */
+    transition: backdrop-filter 0.3s ease; /* Плавный переход для фильтра */
+  }
+.headerSection{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: auto;
+    padding: 20px 40px; /* Отступы для хедера */
+
+}
+  .navItems {
+    display: flex; /* Flexbox для размещения элементов в строку */
+    justify-content: space-between; /* Расстояние между элементами */
+    align-items: center; /* Вертикальное выравнивание по центру */
+  }
+  
+  .navItem {
+    font-size: 16px;
+    font-weight: 400; 
+    font-style: italic;
+    text-decoration: none; /* Убираем подчеркивание */
+    padding: 10px 20px; /* Отступы внутри ссылки */
+    cursor: pointer;
+    text-decoration: none; /* Убираем подчеркивание */
+    color: #2d4a69;
+    text-transform: uppercase;
+  }
+  
+
+  
