@@ -40,9 +40,9 @@ const ConfirmationSection = ({ guestName }) => {
         }
 
 
-            // Очистка анимации при размонтировании компонента
-            return () => shakeAnimation.kill();
-        }, [isModalOpen]);
+        // Очистка анимации при размонтировании компонента
+        return () => shakeAnimation.kill();
+    }, [isModalOpen]);
 
     return (
         <div className={styles.container}>

@@ -7,18 +7,18 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-        <section className={styles.headerSection}>
+      <section className={styles.headerSection}>
         <div className={styles.navItem}>
-            Logo
+          Logo
         </div>
-      <div className={styles.navItems}>
-        <a href="#plan" className={styles.navItem}>{t('plan')}</a>
-        <a href="#place" className={styles.navItem}>{t('venue')}</a>
-        <a href="#dress-code" className={styles.navItem}>{t('dressCode')}</a>
-        <a href="#invitation" className={styles.navItem}>{t('invitation')}</a>
-        <LanguageSwitcher></LanguageSwitcher>
+        <div className={styles.navItems}>
+          <a href="#plan" className={styles.navItem}>{t('plan')}</a>
+          <a href="#place" className={styles.navItem}>{t('venue')}</a>
+          <a href="#dress-code" className={styles.navItem}>{t('dressCode')}</a>
+          <a href="#invitation" className={styles.navItem}>{t('invitation')}</a>
+          <LanguageSwitcher></LanguageSwitcher>
 
-      </div>
+        </div>
       </section>
     </header>
   );

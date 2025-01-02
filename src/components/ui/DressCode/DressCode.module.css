@@ -49,6 +49,8 @@
 }
 
 .dresscodeCircle:hover {
-  transform: scale(2);  /* Увеличиваем размер */
-  opacity: 0;            /* Пропадает */
+  transform: scale(2);
+  /* Увеличиваем размер */
+  opacity: 0;
+  /* Пропадает */
 }

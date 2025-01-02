@@ -36,7 +36,7 @@ function PersonalisedInvitation() {
     <div>Personalised invitation </div>
     <p>Welcome to our wedding!</p>
     <p>BELLOW IS TEST</p> */}
-    <Header></Header>
+            <Header></Header>
             <CelebrationAgenda></CelebrationAgenda>
             <div className={styles.divider}></div>
             <PlaceOfWeddingInfo></PlaceOfWeddingInfo>
@@ -44,8 +44,8 @@ function PersonalisedInvitation() {
             <DressCode></DressCode>
             <div className={styles.divider}></div>
             <ConfirmationSection guestName={guestName} ></ConfirmationSection>
-           <p className={styles.happyToSeeYou}>{t('happyToSeeYou')}</p>
-           <img className={styles.Logo_rounded} src={Logo_rounded} alt='Ceremony icon' />
+            <p className={styles.happyToSeeYou}>{t('happyToSeeYou')}</p>
+            <img className={styles.Logo_rounded} src={Logo_rounded} alt='Ceremony icon' />
 
 
         </>

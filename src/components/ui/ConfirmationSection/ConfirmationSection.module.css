@@ -1,26 +1,27 @@
 /* ConfirmationSection.module.css */
 
 .container {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    max-width: 1400px;
-    margin: auto;
-  }
-  
-  .confirmationSection {
-    
-width: 50%;
-    margin: auto;
-    background-color: rgba(255, 165, 0, 0.1);
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-.confirmationSectionTitle{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.confirmationSection {
+
+  width: 50%;
+  margin: auto;
+  background-color: rgba(255, 165, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.confirmationSectionTitle {
   font-size: 36px;
   font-weight: 500;
   font-style: italic;
@@ -30,38 +31,37 @@ width: 50%;
   margin-bottom: 20px;
 }
 
-  .rightForm {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .confirmationText {
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-    text-align: center;
-  }
-  
-  .openModalButton {
-    background-color: #ff6600;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    width: 100%;
-  }
-  
-  .openModalButton:hover {
-    background-color: #ff914d;
-  }
-  
-  .rightForm p {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-  }
-  
+.rightForm {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirmationText {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.openModalButton {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.openModalButton:hover {
+  background-color: #ff914d;
+}
+
+.rightForm p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}

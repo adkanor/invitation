@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Modal.module.css';  // Стили для модалки
 import gsap from 'gsap'; // Импорт GSAP
 
@@ -52,7 +52,7 @@ const Modal = ({ isOpen, onClose }) => {
     console.log('Food Preference:', foodPreference);
     onClose();  // Закрыть модалку после отправки
   };
-  
+
 
   return (
     <div className={styles.modalOverlay} onClick={onClose}>

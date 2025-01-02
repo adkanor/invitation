@@ -38,8 +38,8 @@ const CelebrationAgenda = () => {
                 </div>
                 <div className={styles.agendaItem}>
                     <div className={styles.agendaTime}>
-                    <img className={styles.agendaSvg} src={GlassesIcon} alt='Ceremony icon' />
-                    <span>17:00</span></div>
+                        <img className={styles.agendaSvg} src={GlassesIcon} alt='Ceremony icon' />
+                        <span>17:00</span></div>
                     <div className={styles.dot}></div>
                     <div className={styles.agendaDescription}>
                         <div className={styles.agendaDescriptionTitle}>{t('weddingDinner')}</div>
@@ -48,8 +48,8 @@ const CelebrationAgenda = () => {
                 </div>
                 <div className={styles.agendaItem}>
                     <div className={styles.agendaTime}>
-                    <img className={styles.agendaSvg} src={DanceIcon} alt='Ceremony icon' />
-                    <span>20:00</span></div>                    <div className={styles.dot}></div>
+                        <img className={styles.agendaSvg} src={DanceIcon} alt='Ceremony icon' />
+                        <span>20:00</span></div>                    <div className={styles.dot}></div>
                     <div className={styles.agendaDescription}>
                         <div className={styles.agendaDescriptionTitle}>{t('dancing')}</div>
                         <div className={styles.agendaDescriptionText}>{t('dancingDescription')}</div>
