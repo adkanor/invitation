@@ -66,6 +66,11 @@ const ConfirmationSection = ({ guestName }) => {
             <div className={styles.rightForm}>
                 <p>Тут наша фотка
                 </p>
+                <div className={styles.card}>
+<div className={styles.card__front}>123</div>
+<div className={styles.card__back}>321</div>
+</div>
+
             </div>
         </div>
     );
