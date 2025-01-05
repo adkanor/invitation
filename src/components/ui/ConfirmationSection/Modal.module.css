@@ -1,79 +1,209 @@
-.container {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-}
-
-.form {
-  width: 60%;
-}
-
-.confirmationText {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  color: #555;
-}
-
-.openModalButton {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-top: 10px;
-}
-
-.openModalButton:hover {
-  background-color: #45a049;
-}
-
-.rightForm {
-  width: 35%;
-  text-align: center;
-}
-
-/* Стили для модалки */
 .modalOverlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 11;
 }
 
-.modalContent {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  width: 400px;
-  max-width: 80%;
-}
-
-.question {
-  margin-bottom: 15px;
-}
-
-.submitButton {
-  margin-top: 20px;
-  text-align: center;
-}
-
 .closeBtn {
-  background-color: #f44336;
-  color: white;
+  position: absolute;
+  top: 13px;
+  right: 5px;
+  background-color: transparent;
+  color: #3a608a;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
-  border-radius: 5px;
-  margin-top: 15px;
+  font-size: 16px;
 }
 
-.closeBtn:hover {
-  background-color: #e53935;
+.modalContent {
+  background-color: #f9f9f4;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-height: 50vw;
+  overflow-y: auto;
+  position: relative;
+  
 }
+
+.modalTitleSection {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modalTitle {
+  max-width: 420px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  font-size: 26px;
+  font-weight: 500;
+  font-style: italic;
+  color: #ff914d;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.modalSubTitle {
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;
+  text-align: center;
+}
+
+.modalWillComeLabel,
+.modalWhatToDrinkTitle,
+.modalNeedHelp,
+.modalMusicTitle,
+.modalNeedPlusOne,
+.modalPlusOneNameLabel,
+.modalPlusOneAgeLabel {
+  font-size: 20px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 25px;
+
+}
+
+.radioOption {
+  font-size: 18px;
+}
+
+.modalWhatToDrinkNote {
+  font-size: 18px;
+  margin-top: 25px;
+}
+
+
+/* Основные стили для инпута */
+.musicInput {
+  width: 100%;
+  padding: 12px 10px;
+  /* Отступы внутри */
+  font-size: 16px;
+  /* Размер шрифта */
+  background-color: #f9f9f4;
+  /* Светлый фон */
+  border: 1px solid #3a608a;
+  /* Светлая рамка */
+  border-radius: 5px;
+  /* Скругленные углы */
+  transition: all 0.3s ease;
+  /* Плавное изменение при фокусе */
+  margin-bottom: 25px;
+
+}
+
+/* Стили при фокусе на инпуте */
+.musicInput:focus {
+  outline: none;
+  /* Убираем стандартное обводку браузера */
+  border-color: none;
+  /* Цвет рамки при фокусе */
+}
+
+/* Стили для подсказки (placeholder) */
+.musicInput::placeholder {
+  font-size: 14px;
+  color: #aaa0a0;
+
+}
+
+.modalSendButton {
+  /* position: fixed;
+  left: 0; */
+  height: 60px;
+  background-color: rgba(58, 96, 138, 0.5);
+  width: 100%;
+  color: #fff;
+  border: none;
+  padding: 20px 30px;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: italic;
+  text-decoration: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.modalSendButton:hover {
+  max-height: 60px;
+  font-size: 18px;
+  background-color: rgba(255, 165, 0, 0.6);
+}
+input[type="checkbox"] {
+  margin-right: 5px;
+  appearance: none; /* Скрываем стандартный вид чекбокса */
+  width: 20px; /* Ширина чекбокса */
+  height: 20px; /* Высота чекбокса */
+  border: 1px solid #3a608a; /* Граница */
+  border-radius: 4px; /* Углы (можно убрать для квадрата) */
+  background-color: #fff; /* Цвет фона */
+  cursor: pointer; /* Меняем курсор */
+  transition: background-color 0.3s, border-color 0.3s; /* Анимация */
+}
+
+input[type="checkbox"]:checked {
+  background-color:rgba(58, 96, 138, 0.8); /* Цвет фона при выборе */
+  border-color: rgba(58, 96, 138, 0.8); /* Цвет границы при выборе */
+}
+
+input[type="checkbox"]:checked::after {
+  content: ''; /* Галочка */
+  display: block;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  margin-left: 5px;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+  appearance: none; /* Убираем стандартный вид радиокнопки */
+  width: 20px; /* Ширина радиокнопки */
+  height: 20px; /* Высота радиокнопки */
+  border: 1px solid #3a608a; /* Граница */
+  border-radius: 50%; /* Круглая форма */
+  background-color: #fff; /* Цвет фона */
+  cursor: pointer; /* Меняем курсор */
+  transition: background-color 0.3s, border-color 0.3s; /* Анимация */
+  position: relative; /* Для позиционирования точки */
+}
+
+
+
+/* Внутренний круг при выбранной радиокнопке */
+input[type="radio"]:checked::after {
+  content: ''; /* Вложенный элемент */
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Центрируем */
+  width: 10px; /* Размер внутреннего круга */
+  height: 10px; /* Размер внутреннего круга */
+  border-radius: 50%; /* Круглая форма */
+  background-color: rgba(58, 96, 138, 0.8); /* Цвет внутреннего круга */
+}
+

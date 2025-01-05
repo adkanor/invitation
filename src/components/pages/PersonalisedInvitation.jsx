@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom'; // Import useParams to extract URL parameters
-import guests from '../../data/guests';
+// import guests from '../../data/guests';
+
 import { useTranslation } from 'react-i18next'
 import i18n from '../../utils/i18n';
 import styles from "./PersonalisedInvitation.module.css"
@@ -10,13 +11,18 @@ import CelebrationAgenda from "../ui/CelebrationAgenda/CelebrationAgenda"
 import Logo_rounded from "../../assets/images/Logo-rounded.svg"
 import ConfirmationSection from '../ui/ConfirmationSection/ConfirmationSection';
 import Header from "../ui/Header/Header.jsx"
+import { findGuestById } from '../../utils/findGuestById.js'; // Импортируем функцию
+
 function PersonalisedInvitation() {
 
     const { t } = useTranslation();
     const guestId = useParams();
-    console.log(guestId)
     const language = i18n.language;
-    const guestInfo = guests.find(guest => guest.id === guestId.id)
+    const guestInfo = findGuestById(guestId.id);
+    // const guestInfo = guests.find(guest => guest.id === guestId.id)
+
+    console.log(guestInfo);
+
     if (!guestInfo) {
 
         return (
@@ -37,6 +43,8 @@ function PersonalisedInvitation() {
     <p>Welcome to our wedding!</p>
     <p>BELLOW IS TEST</p> */}
             <Header></Header>
+           
+
             <CelebrationAgenda></CelebrationAgenda>
             <div className={styles.divider}></div>
             <PlaceOfWeddingInfo></PlaceOfWeddingInfo>

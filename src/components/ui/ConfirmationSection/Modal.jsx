@@ -1,103 +1,267 @@
 import React, { useState, useEffect } from 'react';
-import styles from './Modal.module.css';  // Стили для модалки
-import gsap from 'gsap'; // Импорт GSAP
+import styles from './Modal.module.css'; 
+import gsap from 'gsap'; 
+import { useParams } from 'react-router-dom';
+import { findGuestById } from '../../../utils/findGuestById';
+import { useTranslation } from 'react-i18next'
 
 const Modal = ({ isOpen, onClose }) => {
+  const [attendance, setAttendance] = useState('');
+  const [drink, setDrink] = useState('');
+  const [music, setMusic] = useState('');
+  const [help, setHelp] = useState('');
+  const [plusOne, setPlusOne] = useState('no'); // Новый стейт для плюс одного
+  const [plusOneName, setPlusOneName] = useState(''); // Имя плюс одного
+  const [plusOneAge, setPlusOneAge] = useState(''); // Возраст плюс одного
 
-  const [response, setResponse] = useState('');
-  const [foodPreference, setFoodPreference] = useState('');
+  const { t } = useTranslation();
+  const guestId = useParams();
+  const guestInfo = findGuestById(guestId.id);
+
   useEffect(() => {
     if (isOpen) {
       gsap.fromTo(
         `.${styles.modalContent}`,
-        {
-          opacity: 0,
-          scale: 0.8,
-          rotation: -10, // Начальный угол поворота
-        },
-        {
-          opacity: 1,
-          scale: 1,
-          rotation: 0,
-          duration: 0.8,
-          ease: 'power2.out',
-        }
+        { y: "-100%", opacity: 0 },
+        { y: "0%", opacity: 1, duration: 0.6, ease: "power2.out" }
       );
-    } else {
-      gsap.to(`.${styles.modalContent}`, {
-        opacity: 0,
-        scale: 0.8,
-        rotation: 10, // Угол поворота при закрытии
-        duration: 0.8,
-        ease: 'power2.in',
-      });
-    }
+    } 
   }, [isOpen]);
 
   if (!isOpen) return null;
 
+  // Функция для анимации перед закрытием
 
-  const handleResponseChange = (event) => {
-    setResponse(event.target.value);
+  const closeWithAnimation = () => {
+    gsap.to(`.${styles.modalContent}`, {
+      y: '-100%',
+      opacity: 0,
+      duration: 0.6,
+      ease: 'power2.in',
+      onComplete: () => {
+        onClose();
+      },
+    });
+  };
+  // Обработчики для изменения состояния
+  const handleAttendanceChange = (event) => {
+    setAttendance(event.target.value);
   };
 
-  const handleFoodPreferenceChange = (event) => {
-    setFoodPreference(event.target.value);
+  const handleDrinkChange = (event) => {
+    setDrink(event.target.value);
   };
 
+  const handleMusicChange = (event) => {
+    setMusic(event.target.value);
+  };
+
+  const handleHelpChange = (event) => {
+    setHelp(event.target.value);
+  };
+
+  const handlePlusOneChange = (event) => {
+    setPlusOne(event.target.value); // Обновляем состояние для плюс одного
+  };
+
+  const handlePlusOneNameChange = (event) => {
+    setPlusOneName(event.target.value); // Имя плюс одного
+  };
+
+  const handlePlusOneAgeChange = (event) => {
+    setPlusOneAge(event.target.value); // Возраст плюс одного
+  };
+  // Обработчик отправки формы
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Логика отправки данных или сохранения ответов
-    console.log('Response:', response);
-    console.log('Food Preference:', foodPreference);
-    onClose();  // Закрыть модалку после отправки
-  };
+    console.log('Attendance:', attendance);
+    console.log('Drink Preference:', drink);
+    console.log('Music Request:', music);
+    console.log('Need Help:', help);
+    console.log('Guest ID:', guestId);
+    console.log('Info about guest', guestInfo)
+    console.log('Plus One:', plusOne);
+    console.log('Plus One Name:', plusOneName);
+    console.log('Plus One Age:', plusOneAge);
 
+    closeWithAnimation(); // Закрываем модалку с анимацией
+  };
 
   return (
     <div className={styles.modalOverlay} onClick={onClose}>
       <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-        <h2>Опрос</h2>
+        <button className={styles.closeBtn} onClick={closeWithAnimation}>X</button>
+        <h2 className={styles.modalTitle}>  {t('modalTitle')}</h2>
+        {/* <p className={styles.modalSubTitle}> {t('modalSubTitle')}</p> */}
         <form onSubmit={handleSubmit}>
-          <div className={styles.question}>
-            <label>{'Вы будете присутствовать на нашем событии?'}</label>
-            <div>
+          <label className={styles.modalWillComeLabel}>{t('modalWillComeLabel')}</label>
+          <div className={styles.radioGroup}>
+            <label className={styles.radioOption}>
               <input
                 type="radio"
-                id="yes"
                 name="attendance"
                 value="yes"
-                onChange={handleResponseChange}
-                checked={response === 'yes'}
-              />
-              <label htmlFor="yes">Да</label>
-            </div>
-            <div>
+                checked={attendance === 'yes'}
+                onChange={handleAttendanceChange}
+              /> {t('modalWillComeOptionYes')}
+            </label>
+            <label className={styles.radioOption}>
               <input
                 type="radio"
-                id="no"
                 name="attendance"
                 value="no"
-                onChange={handleResponseChange}
-                checked={response === 'no'}
-              />
-              <label htmlFor="no">Нет</label>
-            </div>
+                checked={attendance === 'no'}
+                onChange={handleAttendanceChange}
+              /> {t('modalWillComeOptionNo')}
+            </label>
+            <label className={styles.radioOption}>
+              <input
+                type="radio"
+                name="attendance"
+                value="unsure"
+                checked={attendance === 'unsure'}
+                onChange={handleAttendanceChange}
+              /> {t('modalWillComeOptionAnother')}
+            </label>
           </div>
-          <div className={styles.question}>
-            <label>{'Ваши предпочтения по еде'}</label>
-            <input
-              type="text"
-              value={foodPreference}
-              onChange={handleFoodPreferenceChange}
-              placeholder="Напишите ваши предпочтения"
-            />
+
+          <label className={styles.modalWhatToDrinkTitle}>{t('modalWhatToDrinkTitle')}</label>
+          <div className={styles.radioGroup}>
+            <label className={styles.radioOption}>
+              <input
+                type="checkbox"
+                name="drink"
+                value="wine"
+                checked={drink === 'wine'}
+                onChange={handleDrinkChange}
+              />{t('modalWhatToDrinkOptionWine')}
+            </label>
+            <label className={styles.radioOption}>
+              <input
+                type="checkbox"
+                name="drink"
+                value="vodka"
+                checked={drink === 'vodka'}
+                onChange={handleDrinkChange}
+              /> {t('modalWhatToDrinkOptionVodka')}
+            </label>
+            <label className={styles.radioOption}>
+              <input
+                type="checkbox"
+                name="drink"
+                value="whiskey"
+                checked={drink === 'whiskey'}
+                onChange={handleDrinkChange}
+              /> {t('modalWhatToDrinkOptionWhiskey')}
+            </label>
+            <label className={styles.radioOption}>
+              <input
+                type="checkbox"
+                name="drink"
+                value="champagne"
+                checked={drink === 'champagne'}
+                onChange={handleDrinkChange}
+              /> {t('modalWhatToDrinkOptionChampane')}
+            </label>
+            <label className={styles.radioOption}>
+              <input
+                type="checkbox"
+                name="drink"
+                value="cocktails"
+                checked={drink === 'cocktails'}
+                onChange={handleDrinkChange}
+              /> {t('modalWhatToDrinkOptionCoctails')}
+            </label>
+            <label className={styles.radioOption}>
+              <input
+                type="checkbox"
+                name="drink"
+                value="nonAlcohol"
+                checked={drink === 'nonAlcohol'}
+                onChange={handleDrinkChange}
+              /> {t('modalWhatToDrinkOptionNonAlcohol')}
+            </label>
           </div>
-          <div className={styles.submitButton}>
-            <button type="submit">Отправить</button>
+
+          {/* <p className={styles.modalWhatToDrinkNote}>{t('modalWhatToDrinkNote')}</p> */}
+
+          <label className={styles.modalMusicTitle}>{t('modalMusicTitle')}</label>
+          <input
+            type="text"
+            className={styles.musicInput}
+            placeholder={t('modalMusicPlaceholder')}
+            value={music}
+            onChange={handleMusicChange}
+          />
+
+          <label className={styles.modalNeedHelp}>{t('modalNeedHelp')}</label>
+          <div className={styles.radioGroup}>
+            <label className={styles.radioOption}>
+              <input
+                type="radio"
+                name="help"
+                value="yes"
+                checked={help === 'yes'}
+                onChange={handleHelpChange}
+              /> {t('modalNeedHelpOptionYes')}
+            </label>
+            <label className={styles.radioOption}>
+              <input
+                type="radio"
+                name="help"
+                value="no"
+                checked={help === 'no'}
+                onChange={handleHelpChange}
+              /> {t('modalNeedHelpOptionNo')}
+            </label>
           </div>
+          {/* Новый блок для "Нужен ли вам плюс один?" */}
+          <label className={styles.modalNeedPlusOne}>{t('modalNeedPlusOne')}</label>
+          <div className={styles.radioGroup}>
+            <label className={styles.radioOption}>
+              <input
+                type="radio"
+                name="plusOne"
+                value="yes"
+                checked={plusOne === 'yes'}
+                onChange={handlePlusOneChange}
+              /> {t('modalPlusOneYes')}
+            </label>
+            <label className={styles.radioOption}>
+              <input
+                type="radio"
+                name="plusOne"
+                value="no"
+                checked={plusOne === 'no'}
+                onChange={handlePlusOneChange}
+              /> {t('modalPlusOneNo')}
+            </label>
+          </div>
+
+          {/* Если выбрано "Да", показываем форму для ввода имени и возраста */}
+          {plusOne === 'yes' && (
+            <>
+              <label className={styles.modalPlusOneNameLabel}>{t('modalPlusOneName')}</label>
+              <input
+                type="text"
+                value={plusOneName}
+                onChange={handlePlusOneNameChange}
+                className={styles.musicInput}
+                />
+
+              <label className={styles.modalPlusOneAgeLabel}>{t('modalPlusOneAge')}</label>
+              <input
+                type="text"
+                value={plusOneAge}
+                onChange={handlePlusOneAgeChange}
+                className={styles.musicInput}
+                />
+            </>
+          )}
+
+          <button type="submit" className={styles.modalSendButton}>{t('modalSendButton')}</button>
         </form>
-        <button className={styles.closeBtn} onClick={onClose}>Закрыть</button>
+
       </div>
     </div>
   );

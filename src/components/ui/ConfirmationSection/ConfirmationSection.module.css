@@ -6,11 +6,17 @@
   padding: 20px;
   max-width: 1400px;
   margin: auto;
+  position: relative;
+
 }
 
 .confirmationSection {
-
+  background-image: url('../../../assets/images/noroot.png');
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 50%;
+  max-width: 550px;
+  height: 300px;
   margin: auto;
   background-color: rgba(255, 165, 0, 0.1);
   border-radius: 10px;
@@ -19,16 +25,38 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+
+}
+.confirmationSection:hover {
+  transform: scale(1.5);
+  cursor: pointer;
 }
 
+.confirmationSection::before {
+  content: ''; /* Псевдоэлемент без текста */
+  position: absolute; /* Позиционируем поверх фона */
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4); /* Черный полупрозрачный слой */
+  border-radius: 10px; /* Чтобы псевдоэлемент совпадал с границами блока */
+  z-index: 1; 
+}
+.confirmationSection > * {
+  position: relative;
+  z-index: 2; /* Текст и другие элементы будут над полупрозрачным слоем */
+}
 .confirmationSectionTitle {
-  font-size: 36px;
-  font-weight: 500;
-  font-style: italic;
-  color: #ff914d;
-  text-transform: uppercase;
+  margin-top: 10px;
   text-align: center;
-  margin-bottom: 20px;
+  font-family: 'Tan Mon Cheri';
+  font-size: 40px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #2d4a69;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.3);
+
 }
 
 .rightForm {
@@ -39,27 +67,47 @@
 }
 
 .confirmationText {
-  margin-bottom: 20px;
-  font-size: 1.1rem;
+  margin-top: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+.confirmationText p{
+padding-bottom: 10px;
+}
+.confirmationDescription{
+  font-size: 18px;
+
+}
+.openModalButton {
+  position: absolute;
+  height: 60px;
+  bottom: 0;
+  background-color: rgba(58, 96, 138, 0.5);
+  width: 100%;
+  color: #fff;
+  border: none;
+  padding: 30px 30px;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: italic;
+  text-decoration: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition: background-color 0.3s ease;
   text-align: center;
 }
 
-.openModalButton {
-  background-color: #ff6600;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  width: 100%;
-}
-
 .openModalButton:hover {
-  background-color: #ff914d;
-}
+  font-size: 18px;
+  background-color: rgba(255, 165, 0, 0.6);
 
+
+}
 .rightForm p {
   font-size: 1.2rem;
   font-weight: bold;
@@ -71,17 +119,19 @@
   width: 300px;
   height: 100px;
   color: white;
-  }
-  .card__front{
+}
+
+.card__front {
   z-index: 1;
   position: relative;
   background-color: cyan;
   height: 100%;
   text-align: center;
   backface-visibility: hidden;
-  transition: transform .3s cubic-bezier(.2,.85,.4,1.275);
-  }
-  .card__back{
+  transition: transform .3s cubic-bezier(.2, .85, .4, 1.275);
+}
+
+.card__back {
   z-index: 0;
   position: absolute;
   top: 0;
@@ -91,13 +141,15 @@
   backface-visibility: hidden;
   background-color: orange;
   transform: rotateY(-180deg);
-  transition: transform .3s cubic-bezier(.2,.85,.4,1.275);
-  }
-  .card:hover .card__back {
+  transition: transform .3s cubic-bezier(.2, .85, .4, 1.275);
+}
+
+.card:hover .card__back {
   transform: rotateY(0deg);
   z-index: 2;
-  }
-  .card:hover .card__front {
+}
+
+.card:hover .card__front {
   transform: rotateY(180deg);
   z-index: -1;
-  }
+}

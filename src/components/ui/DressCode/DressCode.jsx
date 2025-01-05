@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from "./DressCode.module.css"
-import gsap from 'gsap';  // Подключаем GSAP
 
 const Dresscode = () => {
   const { t } = useTranslation();
