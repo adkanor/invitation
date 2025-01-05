@@ -59,32 +59,8 @@ const Modal = ({ isOpen, onClose }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    const formData = new FormData();
-    formData.append('attendance', attendance);
-    formData.append('drink', drink.join(', '));  // Преобразуем массив напитков в строку
-    formData.append('music', music);
-    formData.append('help', help);
-    formData.append('guestId', guestId.id);
-    formData.append('plusOne', plusOne);
-    formData.append('plusOneName', plusOneName);
-    formData.append('plusOneAge', plusOneAge);
-
-    try {
-      const response = await fetch('https://formspree.io/f/mnnnobbp', {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (response.ok) {
         console.log('Form successfully submitted!');
-        closeWithAnimation();  // Закрываем модалку с анимацией после успешной отправки
-      } else {
-        console.error('Form submission error');
-      }
-    } catch (error) {
-      console.error('Error sending form:', error);
-    }
+        closeWithAnimation();  
   };
 
   return (
