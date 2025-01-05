@@ -166,8 +166,7 @@ const Modal = ({ isOpen, onClose }) => {
             value={music}
             onChange={handleMusicChange}
           />
-          <input type="hidden" name="guestId" value={guestId.id} />
-          <input type="hidden" name="guestInfo" value={guestInfo} />
+     
 
           <label className={styles.modalNeedHelp}>{t('modalNeedHelp')}</label>
           <div className={styles.radioGroup}>
