@@ -68,7 +68,7 @@ const Modal = ({ isOpen, onClose }) => {
       <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
         <button className={styles.closeBtn} onClick={closeWithAnimation}>X</button>
         <h2 className={styles.modalTitle}>{t('modalTitle')}</h2>
-        <form onSubmit={handleSubmit} method="POST" action="https://formspree.io/f/mnnnobbp">
+        <form onSubmit={handleSubmit} method="POST" action="https://formspree.io/f/mlddowpp">
           <label className={styles.modalWillComeLabel}>{t('modalWillComeLabel')}</label>
           <div className={styles.radioGroup}>
             <label className={styles.radioOption}>
