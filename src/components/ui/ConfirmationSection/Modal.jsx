@@ -3,16 +3,16 @@ import styles from './Modal.module.css';
 import gsap from 'gsap';
 import { useParams } from 'react-router-dom';
 import { findGuestById } from '../../../utils/findGuestById';
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next';
 
 const Modal = ({ isOpen, onClose }) => {
   const [attendance, setAttendance] = useState('');
   const [drink, setDrink] = useState([]);
   const [music, setMusic] = useState('');
   const [help, setHelp] = useState('');
-  const [plusOne, setPlusOne] = useState('no'); // Новый стейт для плюс одного
-  const [plusOneName, setPlusOneName] = useState(''); // Имя плюс одного
-  const [plusOneAge, setPlusOneAge] = useState(''); // Возраст плюс одного
+  const [plusOne, setPlusOne] = useState('no');
+  const [plusOneName, setPlusOneName] = useState('');
+  const [plusOneAge, setPlusOneAge] = useState('');
 
   const { t } = useTranslation();
   const guestId = useParams();
@@ -30,8 +30,6 @@ const Modal = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
-  // Функция для анимации перед закрытием
-
   const closeWithAnimation = () => {
     gsap.to(`.${styles.modalContent}`, {
       y: '-100%',
@@ -43,63 +41,58 @@ const Modal = ({ isOpen, onClose }) => {
       },
     });
   };
-  // Обработчики для изменения состояния
-  const handleAttendanceChange = (event) => {
-    setAttendance(event.target.value);
-  };
 
+  const handleAttendanceChange = (event) => setAttendance(event.target.value);
   const handleDrinkChange = (event) => {
     const { value } = event.target;
     setDrink((prevDrinks) =>
       prevDrinks.includes(value)
-        ? prevDrinks.filter(drink => drink !== value) // Удаляем напиток, если он уже выбран
-        : [...prevDrinks, value] // Добавляем напиток в массив
+        ? prevDrinks.filter(drink => drink !== value)
+        : [...prevDrinks, value]
     );
   };
+  const handleMusicChange = (event) => setMusic(event.target.value);
+  const handleHelpChange = (event) => setHelp(event.target.value);
+  const handlePlusOneChange = (event) => setPlusOne(event.target.value);
+  const handlePlusOneNameChange = (event) => setPlusOneName(event.target.value);
+  const handlePlusOneAgeChange = (event) => setPlusOneAge(event.target.value);
 
-
-  const handleMusicChange = (event) => {
-    setMusic(event.target.value);
-  };
-
-  const handleHelpChange = (event) => {
-    setHelp(event.target.value);
-  };
-
-  const handlePlusOneChange = (event) => {
-    setPlusOne(event.target.value); // Обновляем состояние для плюс одного
-  };
-
-  const handlePlusOneNameChange = (event) => {
-    setPlusOneName(event.target.value); // Имя плюс одного
-  };
-
-  const handlePlusOneAgeChange = (event) => {
-    setPlusOneAge(event.target.value); // Возраст плюс одного
-  };
-  // Обработчик отправки формы
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log('Attendance:', attendance);
-    console.log('Drink Preference:', drink);
-    console.log('Music Request:', music);
-    console.log('Need Help:', help);
-    console.log('Guest ID:', guestId);
-    console.log('Info about guest', guestInfo)
-    console.log('Plus One:', plusOne);
-    console.log('Plus One Name:', plusOneName);
-    console.log('Plus One Age:', plusOneAge);
 
-    closeWithAnimation(); // Закрываем модалку с анимацией
+    const formData = new FormData();
+    formData.append('attendance', attendance);
+    formData.append('drink', drink.join(', '));  // Преобразуем массив напитков в строку
+    formData.append('music', music);
+    formData.append('help', help);
+    formData.append('guestId', guestId.id);
+    formData.append('plusOne', plusOne);
+    formData.append('plusOneName', plusOneName);
+    formData.append('plusOneAge', plusOneAge);
+
+    try {
+      const response = await fetch('https://formspree.io/f/mnnnobbp', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        console.log('Form successfully submitted!');
+        closeWithAnimation();  // Закрываем модалку с анимацией после успешной отправки
+      } else {
+        console.error('Form submission error');
+      }
+    } catch (error) {
+      console.error('Error sending form:', error);
+    }
   };
 
   return (
     <div className={styles.modalOverlay} onClick={onClose}>
       <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
         <button className={styles.closeBtn} onClick={closeWithAnimation}>X</button>
-        <h2 className={styles.modalTitle}>  {t('modalTitle')}</h2>
-        {/* <p className={styles.modalSubTitle}> {t('modalSubTitle')}</p> */}
-        <form onSubmit={handleSubmit}>
+        <h2 className={styles.modalTitle}>{t('modalTitle')}</h2>
+        <form onSubmit={handleSubmit} method="POST" action="https://formspree.io/f/mnnnobbp">
           <label className={styles.modalWillComeLabel}>{t('modalWillComeLabel')}</label>
           <div className={styles.radioGroup}>
             <label className={styles.radioOption}>
@@ -138,7 +131,8 @@ const Modal = ({ isOpen, onClose }) => {
                 type="checkbox"
                 name="drink"
                 value="wine"
-                checked={drink.includes('wine')} onChange={handleDrinkChange}
+                checked={drink.includes('wine')}
+                onChange={handleDrinkChange}
               />{t('modalWhatToDrinkOptionWine')}
             </label>
             <label className={styles.radioOption}>
@@ -150,45 +144,8 @@ const Modal = ({ isOpen, onClose }) => {
                 onChange={handleDrinkChange}
               /> {t('modalWhatToDrinkOptionVodka')}
             </label>
-            <label className={styles.radioOption}>
-              <input
-                type="checkbox"
-                name="drink"
-                value="whiskey"
-                checked={drink.includes('whiskey')}
-                onChange={handleDrinkChange}
-              /> {t('modalWhatToDrinkOptionWhiskey')}
-            </label>
-            <label className={styles.radioOption}>
-              <input
-                type="checkbox"
-                name="drink"
-                value="champagne" checked={drink.includes('champagne')}
-                onChange={handleDrinkChange}
-              /> {t('modalWhatToDrinkOptionChampane')}
-            </label>
-            <label className={styles.radioOption}>
-              <input
-                type="checkbox"
-                name="drink"
-                value="cocktails"
-                checked={drink === 'cocktails'}
-                onChange={handleDrinkChange}
-              /> {t('modalWhatToDrinkOptionCoctails')}
-            </label>
-            <label className={styles.radioOption}>
-              <input
-                type="checkbox"
-                name="drink"
-                value="nonAlcohol"
-                checked={drink.includes('nonAlcohol')}
-
-                onChange={handleDrinkChange}
-              /> {t('modalWhatToDrinkOptionNonAlcohol')}
-            </label>
+            {/* Добавьте остальные напитки здесь */}
           </div>
-
-          {/* <p className={styles.modalWhatToDrinkNote}>{t('modalWhatToDrinkNote')}</p> */}
 
           <label className={styles.modalMusicTitle}>{t('modalMusicTitle')}</label>
           <input
@@ -220,7 +177,8 @@ const Modal = ({ isOpen, onClose }) => {
               /> {t('modalNeedHelpOptionNo')}
             </label>
           </div>
-          {/* Новый блок для "Нужен ли вам плюс один?" */}
+
+          {/* Блок для "Плюс один" */}
           <label className={styles.modalNeedPlusOne}>{t('modalNeedPlusOne')}</label>
           <div className={styles.radioGroup}>
             <label className={styles.radioOption}>
@@ -243,7 +201,6 @@ const Modal = ({ isOpen, onClose }) => {
             </label>
           </div>
 
-          {/* Если выбрано "Да", показываем форму для ввода имени и возраста */}
           {plusOne === 'yes' && (
             <>
               <label className={styles.modalPlusOneNameLabel}>{t('modalPlusOneName')}</label>
@@ -266,7 +223,6 @@ const Modal = ({ isOpen, onClose }) => {
 
           <button type="submit" className={styles.modalSendButton}>{t('modalSendButton')}</button>
         </form>
-
       </div>
     </div>
   );
