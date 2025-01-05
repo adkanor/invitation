@@ -3,11 +3,11 @@
 .container {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  align-items: flex-start;
   max-width: 1400px;
   margin: auto;
   position: relative;
-
+  margin-bottom: 60px;
 }
 
 .confirmationSection {
@@ -17,7 +17,6 @@
   width: 50%;
   max-width: 550px;
   height: 300px;
-  margin: auto;
   background-color: rgba(255, 165, 0, 0.1);
   border-radius: 10px;
   padding: 20px;
@@ -25,28 +24,40 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
+  position: sticky;
+  top: 300px;
+  /* Отступ от верхней границы окна */
+  z-index: 10;
+  /* Обеспечивает, что элемент будет на переднем плане */
 
 }
+
 .confirmationSection:hover {
   transform: scale(1.5);
   cursor: pointer;
 }
 
 .confirmationSection::before {
-  content: ''; /* Псевдоэлемент без текста */
-  position: absolute; /* Позиционируем поверх фона */
+  content: '';
+  /* Псевдоэлемент без текста */
+  position: absolute;
+  /* Позиционируем поверх фона */
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.4); /* Черный полупрозрачный слой */
-  border-radius: 10px; /* Чтобы псевдоэлемент совпадал с границами блока */
-  z-index: 1; 
+  background: rgba(255, 255, 255, 0.4);
+  /* Черный полупрозрачный слой */
+  border-radius: 10px;
+  /* Чтобы псевдоэлемент совпадал с границами блока */
+  z-index: 1;
 }
-.confirmationSection > * {
+
+.confirmationSection>* {
   position: relative;
-  z-index: 2; /* Текст и другие элементы будут над полупрозрачным слоем */
+  z-index: 2;
+  /* Текст и другие элементы будут над полупрозрачным слоем */
 }
+
 .confirmationSectionTitle {
   margin-top: 10px;
   text-align: center;
@@ -71,13 +82,16 @@
   font-size: 20px;
   text-align: center;
 }
-.confirmationText p{
-padding-bottom: 10px;
+
+.confirmationText p {
+  padding-bottom: 10px;
 }
-.confirmationDescription{
+
+.confirmationDescription {
   font-size: 18px;
 
 }
+
 .openModalButton {
   position: absolute;
   height: 60px;
@@ -108,6 +122,7 @@ padding-bottom: 10px;
 
 
 }
+
 .rightForm p {
   font-size: 1.2rem;
   font-weight: bold;
@@ -152,4 +167,11 @@ padding-bottom: 10px;
 .card:hover .card__front {
   transform: rotateY(180deg);
   z-index: -1;
+}
+
+.formImage {
+  width: 680px;
+  height: 850px;
+  border-radius: 5px;
+  object-fit: cover;
 }

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import styles from "./ConfirmationSection.module.css";
 import Modal from "./Modal.jsx"
 import gsap from 'gsap'; // Импорт GSAP
-
+import Image from "../../../assets/images/dfdf.jpeg"
 const ConfirmationSection = ({ guestName }) => {
     const { t } = useTranslation();
 
@@ -62,8 +62,8 @@ const ConfirmationSection = ({ guestName }) => {
             </div>
             <Modal isOpen={isModalOpen} onClose={closeModal} />
             <div className={styles.rightForm}>
-                <p>Тут наша фотка
-                </p>
+               <img className={styles.formImage} src={Image} alt="image" />
+               
                 {/* <div className={styles.card}>
                     <div className={styles.card__front}>123</div>
                     <div className={styles.card__back}>321</div>

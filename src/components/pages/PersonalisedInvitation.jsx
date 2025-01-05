@@ -45,15 +45,17 @@ function PersonalisedInvitation() {
             <Header></Header>
            
 
-            <CelebrationAgenda></CelebrationAgenda>
-            <div className={styles.divider}></div>
+           
             <PlaceOfWeddingInfo></PlaceOfWeddingInfo>
+            <div className={styles.divider}></div>
+            <CelebrationAgenda></CelebrationAgenda>
             <div className={styles.divider}></div>
             <DressCode></DressCode>
             <div className={styles.divider}></div>
             <ConfirmationSection guestName={guestName} ></ConfirmationSection>
             <p className={styles.happyToSeeYou}>{t('happyToSeeYou')}</p>
             <img className={styles.Logo_rounded} src={Logo_rounded} alt='Ceremony icon' />
+
 
 
         </>

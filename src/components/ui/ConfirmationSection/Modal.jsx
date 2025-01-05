@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import styles from './Modal.module.css'; 
-import gsap from 'gsap'; 
+import styles from './Modal.module.css';
+import gsap from 'gsap';
 import { useParams } from 'react-router-dom';
 import { findGuestById } from '../../../utils/findGuestById';
 import { useTranslation } from 'react-i18next'
 
 const Modal = ({ isOpen, onClose }) => {
   const [attendance, setAttendance] = useState('');
-  const [drink, setDrink] = useState('');
+  const [drink, setDrink] = useState([]);
   const [music, setMusic] = useState('');
   const [help, setHelp] = useState('');
   const [plusOne, setPlusOne] = useState('no'); // Новый стейт для плюс одного
@@ -25,7 +25,7 @@ const Modal = ({ isOpen, onClose }) => {
         { y: "-100%", opacity: 0 },
         { y: "0%", opacity: 1, duration: 0.6, ease: "power2.out" }
       );
-    } 
+    }
   }, [isOpen]);
 
   if (!isOpen) return null;
@@ -49,8 +49,14 @@ const Modal = ({ isOpen, onClose }) => {
   };
 
   const handleDrinkChange = (event) => {
-    setDrink(event.target.value);
+    const { value } = event.target;
+    setDrink((prevDrinks) =>
+      prevDrinks.includes(value)
+        ? prevDrinks.filter(drink => drink !== value) // Удаляем напиток, если он уже выбран
+        : [...prevDrinks, value] // Добавляем напиток в массив
+    );
   };
+
 
   const handleMusicChange = (event) => {
     setMusic(event.target.value);
@@ -132,8 +138,7 @@ const Modal = ({ isOpen, onClose }) => {
                 type="checkbox"
                 name="drink"
                 value="wine"
-                checked={drink === 'wine'}
-                onChange={handleDrinkChange}
+                checked={drink.includes('wine')} onChange={handleDrinkChange}
               />{t('modalWhatToDrinkOptionWine')}
             </label>
             <label className={styles.radioOption}>
@@ -141,7 +146,7 @@ const Modal = ({ isOpen, onClose }) => {
                 type="checkbox"
                 name="drink"
                 value="vodka"
-                checked={drink === 'vodka'}
+                checked={drink.includes('vodka')}
                 onChange={handleDrinkChange}
               /> {t('modalWhatToDrinkOptionVodka')}
             </label>
@@ -150,7 +155,7 @@ const Modal = ({ isOpen, onClose }) => {
                 type="checkbox"
                 name="drink"
                 value="whiskey"
-                checked={drink === 'whiskey'}
+                checked={drink.includes('whiskey')}
                 onChange={handleDrinkChange}
               /> {t('modalWhatToDrinkOptionWhiskey')}
             </label>
@@ -158,8 +163,7 @@ const Modal = ({ isOpen, onClose }) => {
               <input
                 type="checkbox"
                 name="drink"
-                value="champagne"
-                checked={drink === 'champagne'}
+                value="champagne" checked={drink.includes('champagne')}
                 onChange={handleDrinkChange}
               /> {t('modalWhatToDrinkOptionChampane')}
             </label>
@@ -177,7 +181,8 @@ const Modal = ({ isOpen, onClose }) => {
                 type="checkbox"
                 name="drink"
                 value="nonAlcohol"
-                checked={drink === 'nonAlcohol'}
+                checked={drink.includes('nonAlcohol')}
+
                 onChange={handleDrinkChange}
               /> {t('modalWhatToDrinkOptionNonAlcohol')}
             </label>
@@ -247,7 +252,7 @@ const Modal = ({ isOpen, onClose }) => {
                 value={plusOneName}
                 onChange={handlePlusOneNameChange}
                 className={styles.musicInput}
-                />
+              />
 
               <label className={styles.modalPlusOneAgeLabel}>{t('modalPlusOneAge')}</label>
               <input
@@ -255,7 +260,7 @@ const Modal = ({ isOpen, onClose }) => {
                 value={plusOneAge}
                 onChange={handlePlusOneAgeChange}
                 className={styles.musicInput}
-                />
+              />
             </>
           )}
 
