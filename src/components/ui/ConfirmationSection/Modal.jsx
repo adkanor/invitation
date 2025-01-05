@@ -120,7 +120,42 @@ const Modal = ({ isOpen, onClose }) => {
                 onChange={handleDrinkChange}
               /> {t('modalWhatToDrinkOptionVodka')}
             </label>
-            {/* Добавьте остальные напитки здесь */}
+            <label className={styles.radioOption}>
+              <input
+                type="checkbox"
+                name="drink"
+                value="whiskey"
+                checked={drink.includes('whiskey')} // Проверяем, есть ли "whiskey" в массиве
+                onChange={handleDrinkChange}
+              /> {t('modalWhatToDrinkOptionWhiskey')}
+            </label>
+            <label className={styles.radioOption}>
+              <input
+                type="checkbox"
+                name="drink"
+                value="champagne"
+                checked={drink.includes('champagne')} // Проверяем, есть ли "champagne" в массиве
+                onChange={handleDrinkChange}
+              /> {t('modalWhatToDrinkOptionChampane')}
+            </label>
+            <label className={styles.radioOption}>
+              <input
+                type="checkbox"
+                name="drink"
+                value="cocktails"
+                checked={drink.includes('cocktails')} // Проверяем, есть ли "cocktails" в массиве
+                onChange={handleDrinkChange}
+              /> {t('modalWhatToDrinkOptionCoctails')}
+            </label>
+            <label className={styles.radioOption}>
+              <input
+                type="checkbox"
+                name="drink"
+                value="nonAlcohol"
+                checked={drink.includes('nonAlcohol')} // Проверяем, есть ли "nonAlcohol" в массиве
+                onChange={handleDrinkChange}
+              /> {t('modalWhatToDrinkOptionNonAlcohol')}
+            </label>
           </div>
 
           <label className={styles.modalMusicTitle}>{t('modalMusicTitle')}</label>
