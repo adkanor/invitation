@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useParams } from 'react-router-dom'; // Import useParams to extract URL parameters
 // import guests from '../../data/guests';
 
@@ -13,6 +13,7 @@ import ConfirmationSection from '../ui/ConfirmationSection/ConfirmationSection';
 import Header from "../ui/Header/Header.jsx"
 import { findGuestById } from '../../utils/findGuestById.js'; // Импортируем функцию
 
+
 function PersonalisedInvitation() {
 
     const { t } = useTranslation();
@@ -21,15 +22,16 @@ function PersonalisedInvitation() {
     const guestInfo = findGuestById(guestId.id);
     // const guestInfo = guests.find(guest => guest.id === guestId.id)
 
-    console.log(guestInfo);
+    useEffect(() => {
+        sessionStorage.setItem('guestId', guestId.id);
+    }, [guestId.id]);
 
     if (!guestInfo) {
-
         return (
             <div>
                 <p>Guest was not found</p>
             </div>
-        )
+        );
     }
 
     const guestName = guestInfo.name[language] || guestInfo.name.en;
@@ -55,7 +57,6 @@ function PersonalisedInvitation() {
             <ConfirmationSection guestName={guestName} ></ConfirmationSection>
             <p className={styles.happyToSeeYou}>{t('happyToSeeYou')}</p>
             <img className={styles.Logo_rounded} src={Logo_rounded} alt='Ceremony icon' />
-
 
 
         </>

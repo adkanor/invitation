@@ -17,6 +17,8 @@ const Modal = ({ isOpen, onClose }) => {
   const { t } = useTranslation();
   const guestId = useParams();
   const guestInfo = findGuestById(guestId.id);
+  const guestInfoJson = JSON.stringify(guestInfo);
+  let nextUrl = `https://invitation-rho-two.vercel.app/guest/${guestId.id}`;
 
   useEffect(() => {
     if (isOpen) {
@@ -57,18 +59,44 @@ const Modal = ({ isOpen, onClose }) => {
   const handlePlusOneNameChange = (event) => setPlusOneName(event.target.value);
   const handlePlusOneAgeChange = (event) => setPlusOneAge(event.target.value);
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    console.log('Form successfully submitted!');
-    closeWithAnimation();
-  };
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+
+  //   const formData = new FormData();
+  //   formData.append('attendance', attendance);
+  //   formData.append('drink', drink.join(', '));  // Преобразуем массив напитков в строку
+  //   formData.append('music', music);
+  //   formData.append('help', help);
+  //   formData.append('guestId', guestId.id);
+  //   formData.append('guestId', guestInfo);
+  //   formData.append('plusOne', plusOne);
+  //   formData.append('plusOneName', plusOneName);
+  //   formData.append('plusOneAge', plusOneAge);
+
+  //   // try {
+  //   //   const response = await fetch('https://formspree.io/f/mnnnobbp', {
+  //   //     method: 'POST',
+  //   //     body: formData,
+  //   //     mode: 'no-cors', 
+  //   //   });
+
+  //   //   if (response.ok) {
+  //   //     console.log('Form successfully submitted!');
+  //   //     closeWithAnimation();  // Закрываем модалку с анимацией после успешной отправки
+  //   //   } else {
+  //   //     console.error('Form submission error');
+  //   //   }
+  //   // } catch (error) {
+  //   //   console.error('Error sending form:', error);
+  //   // }
+  // };
 
   return (
     <div className={styles.modalOverlay} onClick={onClose}>
       <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
         <button className={styles.closeBtn} onClick={closeWithAnimation}>X</button>
         <h2 className={styles.modalTitle}>{t('modalTitle')}</h2>
-        <form onSubmit={handleSubmit} method="POST" action="https://formspree.io/f/mlddowpp">
+        <form  action="https://formspree.io/f/mnnnobbp" method="POST">
           <label className={styles.modalWillComeLabel}>{t('modalWillComeLabel')}</label>
           <div className={styles.radioGroup}>
             <label className={styles.radioOption}>
@@ -80,6 +108,8 @@ const Modal = ({ isOpen, onClose }) => {
                 onChange={handleAttendanceChange}
               /> {t('modalWillComeOptionYes')}
             </label>
+            <input type="hidden" name="_next" value="https://workspace.google.com/intl/ru/gmail/" />
+
             <label className={styles.radioOption}>
               <input
                 type="radio"
@@ -99,7 +129,8 @@ const Modal = ({ isOpen, onClose }) => {
               /> {t('modalWillComeOptionAnother')}
             </label>
           </div>
-
+          <input type="hidden" name="guestInfo" value={guestInfoJson} />
+          <input type="hidden" name="guestId" value={guestId.id} />
           <label className={styles.modalWhatToDrinkTitle}>{t('modalWhatToDrinkTitle')}</label>
           <div className={styles.radioGroup}>
             <label className={styles.radioOption}>
@@ -155,18 +186,17 @@ const Modal = ({ isOpen, onClose }) => {
                 checked={drink.includes('nonAlcohol')} // Проверяем, есть ли "nonAlcohol" в массиве
                 onChange={handleDrinkChange}
               /> {t('modalWhatToDrinkOptionNonAlcohol')}
-            </label>
-          </div>
+            </label>          </div>
 
           <label className={styles.modalMusicTitle}>{t('modalMusicTitle')}</label>
           <input
             type="text"
+            name="music"
             className={styles.musicInput}
             placeholder={t('modalMusicPlaceholder')}
             value={music}
             onChange={handleMusicChange}
           />
-     
 
           <label className={styles.modalNeedHelp}>{t('modalNeedHelp')}</label>
           <div className={styles.radioGroup}>
@@ -218,6 +248,7 @@ const Modal = ({ isOpen, onClose }) => {
               <label className={styles.modalPlusOneNameLabel}>{t('modalPlusOneName')}</label>
               <input
                 type="text"
+                name="plusOneName"
                 value={plusOneName}
                 onChange={handlePlusOneNameChange}
                 className={styles.musicInput}
@@ -226,6 +257,7 @@ const Modal = ({ isOpen, onClose }) => {
               <label className={styles.modalPlusOneAgeLabel}>{t('modalPlusOneAge')}</label>
               <input
                 type="text"
+                name="plusOneAge"
                 value={plusOneAge}
                 onChange={handlePlusOneAgeChange}
                 className={styles.musicInput}
@@ -233,7 +265,7 @@ const Modal = ({ isOpen, onClose }) => {
             </>
           )}
 
-          <button type="submit" className={styles.modalSendButton}>{t('modalSendButton')}</button>
+          <button type="submit" onClick={closeWithAnimation} className={styles.modalSendButton}>{t('modalSendButton')}</button>
         </form>
       </div>
     </div>

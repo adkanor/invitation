@@ -6,6 +6,7 @@ import Nothing from './Nothing'
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './utils/i18n';
+import  ThankYouPage from "../src/components/pages/ThankYouPage/ThankYouPage"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,6 +16,7 @@ root.render(
       <Routes>
        
         <Route path="/guest/:id" element={<App />} />
+        <Route path="/thank-you" element={<ThankYouPage/>} /> 
         <Route path="*" element={<Nothing/>} /> 
 
       </Routes>
