@@ -5,7 +5,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100;
   z-index: 9;
   transition: backdrop-filter 0.3s ease;
 }
@@ -58,8 +58,7 @@
   }
 
   .navItem {
-    font-size: 14px;
-    padding: 8px 16px;
+   display: none;
   }
 
   .Logo_rounded {
@@ -74,9 +73,8 @@
   }
 
   .navItem {
-    font-size: 12px;
-    padding: 6px 12px;
-  }
+    display: none;
+   }
 
   .Logo_rounded {
     width: 50px;
