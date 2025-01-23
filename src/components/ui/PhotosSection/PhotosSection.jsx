@@ -47,14 +47,14 @@ const PhotosSection = () => {
     <section className={styles.photosWrapSection} ref={sectionRef} id="sectionPin">
       <div className={styles.photosWrap} ref={wrapperRef}>
         <h2 className={styles.photosDesc}>Это мы — Катя и Леша. Два разных мира, которые сошлись в одном.  Каждое фото — это не просто момент, это история нашего путешествия, которое только начинается</h2>
-        <div className="photo" >
-          <img src="https://images.pexels.com/photos/5207262/pexels-photo-5207262.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900" alt=""/>
+        <div className={styles.photoBlock} >
+          <img className={styles.photoImg} src="https://images.pexels.com/photos/5207262/pexels-photo-5207262.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900" alt=""/>
         </div>
-        <div className="photo">
-          <img src="https://images.pexels.com/photos/3371358/pexels-photo-3371358.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900" alt=""/>
+        <div className={styles.photoBlock}>
+          <img className={styles.photoImg} src="https://images.pexels.com/photos/3371358/pexels-photo-3371358.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900" alt=""/>
         </div>
-        <div className="photo">
-          <img src="https://images.pexels.com/photos/3618545/pexels-photo-3618545.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900" alt=""/>
+        <div className={styles.photoBlock}>
+          <img className={styles.photoImg} src="https://images.pexels.com/photos/3618545/pexels-photo-3618545.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900" alt=""/>
         </div>
       </div>
     </section>
