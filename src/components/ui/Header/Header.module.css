@@ -3,17 +3,21 @@
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   position: fixed;
+  width: 100vw;
   top: 0;
   left: 0;
   width: 100;
-  z-index: 9;
+  z-index: 12;
   transition: backdrop-filter 0.3s ease;
 }
-
+.navItemsHidden{
+  display: none;
+}
 .headerSection {
   display: flex;
   justify-content: space-between;
   max-width: 1400px;
+  width: 100%;
   margin: auto;
   padding: 20px 40px;
 
@@ -53,14 +57,19 @@
 
 @media (max-width: 900px) {
   .headerSection {
-    max-width: 100%;
+    max-width: 900px;
+    width: 100vw;
     padding: 10px 20px;
   }
 
-  .navItem {
+  .navItems {
    display: none;
   }
-
+  .navItemsHidden{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   .Logo_rounded {
     width: 60px;
     height: 60px;
@@ -69,13 +78,17 @@
 
 @media (max-width: 600px) {
   .headerSection {
-    padding: 8px 16px;
+    max-width: 600px;
+    width: 100vw;
+    padding: 10px 20px;
   }
-
-  .navItem {
+  .navItems {
     display: none;
    }
-
+.navItemsHidden{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;}
   .Logo_rounded {
     width: 50px;
     height: 50px;

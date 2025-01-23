@@ -57,6 +57,9 @@ const Header = () => {
           <LanguageSwitcher></LanguageSwitcher>
 
         </div>
+        <div className={styles.navItemsHidden}>
+        <LanguageSwitcher></LanguageSwitcher>
+        </div>
       </section>
     </header>
   );
