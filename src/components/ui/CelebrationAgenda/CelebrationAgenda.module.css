@@ -109,3 +109,88 @@
     margin-left: 10px;
 
 }
+
+
+@media (max-width: 900px) {
+    .agendaTitle {
+        font-size: 28px;
+    }
+
+    .agendaContainer {
+        max-width: 100%;
+        transform: translateX(0);
+        margin-bottom: 60px;
+    }
+
+    .agendaItem {
+        padding-top: 30px;
+    }
+
+    .agendaIcon {
+        left: -150px;
+    }
+
+    .agendaTime {
+        font-size: 22px;
+        left: -100px;
+    }
+
+    .dot {
+        left: -2px;
+    }
+
+    .agendaDescription {
+        margin-left: 40px;
+    }
+
+    .agendaDescriptionTitle {
+        font-size: 22px;
+    }
+
+    .agendaDescriptionText {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .agendaTitle {
+        font-size: 24px;
+    }
+
+    .agendaContainer {
+        max-width: 100%;
+        transform: translateX(0);
+        margin-bottom: 40px;
+        height: auto;
+    }
+
+    .agendaItem {
+        padding-top: 20px;
+    }
+
+    .agendaIcon {
+        left: -120px;
+    }
+
+    .agendaTime {
+        font-size: 20px;
+        left: -80px;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .agendaDescription {
+        margin-left: 20px;
+    }
+
+    .agendaDescriptionTitle {
+        font-size: 20px;
+    }
+
+    .agendaDescriptionText {
+        font-size: 14px;
+    }
+}

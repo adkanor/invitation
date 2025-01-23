@@ -5,7 +5,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   z-index: 9;
   transition: backdrop-filter 0.3s ease;
 }
@@ -49,4 +49,37 @@
   height: 80px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 900px) {
+  .headerSection {
+    max-width: 100%;
+    padding: 10px 20px;
+  }
+
+  .navItem {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .Logo_rounded {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .headerSection {
+    padding: 8px 16px;
+  }
+
+  .navItem {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .Logo_rounded {
+    width: 50px;
+    height: 50px;
+  }
 }

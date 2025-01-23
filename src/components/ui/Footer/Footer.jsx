@@ -10,6 +10,9 @@ const Header = () => {
       <footer className={styles.footer}>
         <section className={styles.footerSection}>
         <p className={styles.happyToSeeYou}>{t('happyToSeeYou')}</p>
+        <p className={styles.happyToSeeYouText}>{t('happyToSeeYou_additionalInfo')}</p>
+
+        
         <img className={styles.Logo_rounded} src={Logo_rounded} alt='Ceremony icon' />
         </section>
       </footer>

@@ -1,7 +1,6 @@
 
 .footerSection{
-    color: #f9f9f4;
-    background-color: rgba(45, 74, 105, 0.8); 
+
 padding-top: 60px;
 padding-bottom: 60px;
 
@@ -25,3 +24,60 @@ padding-bottom: 60px;
     font-weight: 400;
     text-transform: uppercase;
  }
+ .happyToSeeYouText{
+   display: block;
+   margin: auto;
+   max-width: 800px;
+   font-size: 16px;
+   font-weight: 400; 
+   font-style: italic;
+   text-align: center;
+
+ }
+
+ @media (max-width: 900px) {
+   .footerSection {
+     padding-top: 40px;
+     padding-bottom: 40px;
+   }
+ 
+   .Logo_rounded {
+     width: 120px;
+     height: 120px;
+     margin-bottom: 40px;
+   }
+ 
+   .happyToSeeYou {
+     font-size: 30px;
+     margin-bottom: 15px;
+   }
+ 
+   .happyToSeeYouText {
+     font-size: 14px;
+     max-width: 700px;
+   }
+ }
+ 
+ @media (max-width: 600px) {
+   .footerSection {
+     padding-top: 30px;
+     padding-bottom: 30px;
+   }
+ 
+   .Logo_rounded {
+     width: 100px;
+     height: 100px;
+     margin-bottom: 30px;
+   }
+ 
+   .happyToSeeYou {
+     font-size: 24px;
+     margin-bottom: 10px;
+   }
+ 
+   .happyToSeeYouText {
+     font-size: 12px;
+     max-width: 600px;
+   }
+ }
+ 

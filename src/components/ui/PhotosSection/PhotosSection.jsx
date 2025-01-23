@@ -4,6 +4,8 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import MainHeaderPhotoCouple from "../../../assets/images/we.jpg"
 import MainHeaderPhotoCouple2 from "../../../assets/images/we3.jpeg"
+import MainHeaderPhotoCouple5 from "../../../assets/images/we2.jpeg"
+
 import { useTranslation } from 'react-i18next';
 import Icon_hearts from "../../../assets/images/icon-hearts.png"
 
@@ -52,15 +54,14 @@ const PhotosSection = () => {
         <span className={styles.photosDescSpan}>      {t('headerDescription')}
         </span>
         </h2>
-       
+        <div className={styles.photoBlock}>
+          <img className={styles.photoImg} src={MainHeaderPhotoCouple} alt="Main Header Couple"/>
+        </div>
         <div className={styles.photoBlock} >
           <img className={styles.photoImg} src={MainHeaderPhotoCouple2} alt="Main Header Couple "/>
         </div>
         <div className={styles.photoBlock}>
-          <img className={styles.photoImg} src={MainHeaderPhotoCouple} alt="Main Header Couple"/>
-        </div>
-        <div className={styles.photoBlock}>
-          <img className={styles.photoImg} src={MainHeaderPhotoCouple} alt="Main Header Couple"/>
+          <img className={styles.photoImg} src={MainHeaderPhotoCouple5} alt="Main Header Couple"/>
         </div>
       </div>
     </section>

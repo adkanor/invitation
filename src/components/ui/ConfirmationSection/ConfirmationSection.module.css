@@ -170,3 +170,113 @@
   object-fit: cover;
 
 }
+
+@media (max-width: 900px) {
+  .confirmationSectionContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .confirmationSection {
+    width: 80%;
+    max-width: 450px;
+    height: 250px;
+    padding: 15px;
+  }
+
+  .confirmationSectionTitle {
+    font-size: 30px;
+  }
+
+  .confirmationText {
+    font-size: 18px;
+  }
+
+  .rightForm {
+    width: 80%;
+    margin-top: 20px;
+  }
+
+  .confirmationText p {
+    font-size: 14px;
+  }
+
+  .openModalButton {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .formImage {
+    width: 500px;
+    height: 650px;
+  }
+
+  .card {
+    width: 250px;
+    height: 90px;
+  }
+
+  .card__front, .card__back {
+    height: 90px;
+  }
+
+  .card:hover .card__back {
+    transform: rotateY(0deg);
+  }
+
+  .card:hover .card__front {
+    transform: rotateY(180deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .confirmationSection {
+    width: 100%;
+    height: 220px;
+    padding: 10px;
+  }
+
+  .confirmationSectionTitle {
+    font-size: 24px;
+  }
+
+  .confirmationText {
+    font-size: 16px;
+  }
+
+  .rightForm {
+    width: 90%;
+    margin-top: 15px;
+  }
+
+  .confirmationText p {
+    font-size: 12px;
+  }
+
+  .openModalButton {
+    font-size: 14px;
+    padding: 8px 18px;
+  }
+
+  .formImage {
+    width: 400px;
+    height: 500px;
+  }
+
+  .card {
+    width: 220px;
+    height: 80px;
+  }
+
+  .card__front, .card__back {
+    height: 80px;
+  }
+
+  .card:hover .card__back {
+    transform: rotateY(0deg);
+  }
+
+  .card:hover .card__front {
+    transform: rotateY(180deg);
+  }
+}

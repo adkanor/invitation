@@ -1,7 +1,7 @@
 {
     "welcome": "Welcome!",
     "headerHello": "Hello",
-    "headerDescription": "This is us — Katya and Lesha. Two completely different worlds that came together in one. Each photo here is a piece of our story, which we are happy to share with you. Our journey is just beginning, and you are a big part of it!",
+    "headerDescription": "This is us — Katya and Lesha. Two completely different worlds that came together in one. We are happy to share with you a piece of our story. Our journey is just beginning, and you are a big part of it!",
     "venueTitle": "Venue of Our Celebration",
     "venueDescription": "The place we chose for our wedding is the Kozi Grod hotel and restaurant. We chose this venue not by chance: it offers the perfect combination of beautiful interiors and exquisite cuisine that will make our day even more special.",
     "venueAdress": "Lesnikow Street 3, 83-047 Pomlewo, PL",
@@ -20,6 +20,7 @@
     "dancing": "Dancing",
     "dancingDescription": "An evening of dancing, where we invite everyone to join us in celebrating the start of our new life together.",
     "happyToSeeYou": "We will be happy to see you!",
+    "happyToSeeYou_additionalInfo": "If you would like to congratulate us with a gift, we would greatly appreciate your thoughtfulness. However, the best gift for us will be your presence and your support on this special day!",
     "rsvpTitle": "RSVP",
     "rsvpAreYouComming": "Will you come?",
     "rsvpKindlyReply": "Kindly reply by 1st of April",

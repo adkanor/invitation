@@ -25,7 +25,7 @@
     text-transform: uppercase;
 } */
 .divider {
-   width: 1400px;
+   width: 100vw;
    height: 1px;
    background: linear-gradient(to right, #2d4a69, transparent 50%, transparent 50%, #3a608a);
    margin: 0px auto;

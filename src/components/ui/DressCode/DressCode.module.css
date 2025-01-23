@@ -50,7 +50,57 @@
 
 .dresscodeCircle:hover {
   transform: scale(2);
-  /* Увеличиваем размер */
   opacity: 0;
-  /* Пропадает */
+}
+@media (max-width: 900px) {
+  .dresscodeSection {
+    padding: 10px;
+  }
+
+  .dresscodeTitle {
+    font-size: 28px;
+  }
+
+  .dresscodeText {
+    font-size: 16px;
+    max-width: 100%;
+  }
+
+  .dresscodeCircleSection {
+    margin-top: 40px;
+    gap: 10px;
+  }
+
+  .dresscodeCircle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .dresscodeCircle:hover {
+    transform: scale(1.5);
+  }
+}
+
+@media (max-width: 600px) {
+  .dresscodeTitle {
+    font-size: 24px;
+  }
+
+  .dresscodeText {
+    font-size: 14px;
+  }
+
+  .dresscodeCircleSection {
+    margin-top: 30px;
+    gap: 8px;
+  }
+
+  .dresscodeCircle {
+    width: 35px;
+    height: 35px;
+  }
+
+  .dresscodeCircle:hover {
+    transform: scale(1.4);
+  }
 }
