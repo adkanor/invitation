@@ -12,8 +12,8 @@ import Logo_rounded from "../../assets/images/Logo-rounded.svg"
 import ConfirmationSection from '../ui/ConfirmationSection/ConfirmationSection';
 import Header from "../ui/Header/Header.jsx"
 import { findGuestById } from '../../utils/findGuestById.js'; // Импортируем функцию
-
-
+import ScrollProgress from '../ui/ScrollProgress/ScrollProgress.jsx';
+import PhotosSection from "../ui/PhotosSection/PhotosSection.jsx"
 function PersonalisedInvitation() {
 
     const { t } = useTranslation();
@@ -24,6 +24,8 @@ function PersonalisedInvitation() {
 
     useEffect(() => {
         sessionStorage.setItem('guestId', guestId.id);
+        localStorage.setItem('guestId', guestId.id);
+
     }, [guestId.id]);
 
     if (!guestInfo) {
@@ -39,15 +41,13 @@ function PersonalisedInvitation() {
 
     return (
         <>
-            {/* <p className={styles.try_fonts}>Try fonts it is trying</p>
-<p>Try fonts it is trying</p>
-    <div>Personalised invitation </div>
-    <p>Welcome to our wedding!</p>
-    <p>BELLOW IS TEST</p> */}
+     
+         <ScrollProgress/>
             <Header></Header>
            
 
-           
+            <PhotosSection></PhotosSection>
+
             <PlaceOfWeddingInfo></PlaceOfWeddingInfo>
             <div className={styles.divider}></div>
             <CelebrationAgenda></CelebrationAgenda>
@@ -57,6 +57,12 @@ function PersonalisedInvitation() {
             <ConfirmationSection guestName={guestName} ></ConfirmationSection>
             <p className={styles.happyToSeeYou}>{t('happyToSeeYou')}</p>
             <img className={styles.Logo_rounded} src={Logo_rounded} alt='Ceremony icon' />
+            <DressCode></DressCode>
+
+            <DressCode></DressCode>
+
+            <DressCode></DressCode>
+
 
 
         </>

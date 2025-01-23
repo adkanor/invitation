@@ -35,36 +35,26 @@ const CelebrationAgenda = () => {
     };
     useEffect(() => {
 
-        // АНИМАЦИЯ 1
 
-        // const anim = gsap.fromTo(agendaTimeRefs.current, { x: -500, paused: true },{ x: 0, paused: true });
-        // ScrollTrigger.create({
-        //     trigger: agendaTimeRefs.current,
-        //     start: "center 70%", scrub: 5,
-        //     onEnter: () => anim.play()
-        //   });
-
-        //   ScrollTrigger.create({
-        //     trigger: agendaTimeRefs.current,
-        //     start: "top bottom", scrub: 5,
-        //     onLeaveBack: () => anim.pause(0)
-        //   });
-
-        // АНИМАЦИЯ 2
-        gsap.fromTo(
-            agendaTitles.current, 
-            {  x:130 }, 
-            {
-             x:0 ,
-                scrollTrigger: {
-                    trigger: agendaTitles.current,
-                    start: "top 90%", 
-                    end: "bottom 20%", 
-                     scrub: true,  
-                    markers: true,
+            gsap.fromTo(
+                agendaTitles.current,
+                { opacity: 0, scale: 0.7, color: "#ff914d", y: 20 }, 
+                {
+                    opacity: 1,
+                    scale: 1,
+                    color: "#ff911d", 
+                    y: 0,
+                    duration: 0.7, 
+                    scrollTrigger: {
+                        trigger: agendaTitles.current,
+                        start: "top 90%", 
+                        end: "top 50%",  
+                        toggleActions: "play none none none", 
+                    },
                 }
-            }
-        );
+            );
+
+          
         gsap.fromTo(
             agendaDescriptionTitleRefs.current, 
             { opacity: 0,  }, 
@@ -75,25 +65,17 @@ const CelebrationAgenda = () => {
                     start: "top 90%", 
                     end: "bottom 20%", 
                      scrub: true,  
-                    markers: true,
                 }
             }
         );
 
-        gsap.to(agendaTimeRefs.current, { 
-            x: 300,
-            scrollTrigger: {
-              trigger: agendaTimeRefs.current,
-              scrub: true,
-               start: "top 90%", 
-              end: "bottom 20%", 
-          
-            }
-          })
+        
         }, []);
 
+        
+
         return (
-            <div className={styles.agendaSection}>
+            <div className={styles.agendaSection} id="plan">
                 <h2 className={styles.agendaTitle}>{t('agendaTitle')}</h2>
                 <div className={styles.agendaContainer}>
                     <div className={styles.timeline}></div>

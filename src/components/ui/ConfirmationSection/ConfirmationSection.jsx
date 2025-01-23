@@ -4,6 +4,8 @@ import styles from "./ConfirmationSection.module.css";
 import Modal from "./Modal.jsx"
 import gsap from 'gsap'; // Импорт GSAP
 import Image from "../../../assets/images/dfdf.jpeg"
+import Image2 from "../../../assets/images/we.jpg"
+
 const ConfirmationSection = ({ guestName }) => {
     const { t } = useTranslation();
 
@@ -45,7 +47,7 @@ const ConfirmationSection = ({ guestName }) => {
     }, [isModalOpen]);
 
     return (
-        <div className={styles.container}>
+        <div className={styles.confirmationSectionContainer} id="invitation">
             <div className={styles.confirmationSection}>
                 <h3 className={styles.confirmationSectionTitle}>{t('rsvpTitle')}</h3>
                 <div className={styles.confirmationText}>
@@ -64,10 +66,7 @@ const ConfirmationSection = ({ guestName }) => {
             <div className={styles.rightForm}>
                <img className={styles.formImage} src={Image} alt="image" />
                
-                {/* <div className={styles.card}>
-                    <div className={styles.card__front}>123</div>
-                    <div className={styles.card__back}>321</div>
-                </div> */}
+           
 
             </div>
         </div>
