@@ -78,3 +78,74 @@
   color: #fff;
   font-weight: bold;
 }
+
+@media (max-width: 900px) {
+  .languageSwitcher {
+    margin-left: 20px;
+  }
+
+  .languageButton {
+    width: 80px;
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+
+  .buttonIcon {
+    width: 10px;
+    height: 10px;
+    top: 8px;
+    left: 15px;
+  }
+
+  .arrowIcon {
+    width: 12px;
+    height: 12px;
+    margin-left: 4px;
+    padding-top: 2px;
+  }
+
+  .languageDropdown {
+    width: 80px;
+    font-size: 12px;
+  }
+
+  .languageDropdown li {
+    padding: 8px 12px;
+  }
+}
+
+/* Для экранов меньше 600px */
+@media (max-width: 600px) {
+  .languageSwitcher {
+    margin-left: 10px;
+  }
+
+  .languageButton {
+    width: 70px;
+    font-size: 10px;
+    padding: 6px 12px;
+  }
+
+  .buttonIcon {
+    width: 8px;
+    height: 8px;
+    top: 5px;
+    left: 10px;
+  }
+
+  .arrowIcon {
+    width: 10px;
+    height: 10px;
+    margin-left: 3px;
+    padding-top: 2px;
+  }
+
+  .languageDropdown {
+    width: 70px;
+    font-size: 10px;
+  }
+
+  .languageDropdown li {
+    padding: 6px 10px;
+  }
+}

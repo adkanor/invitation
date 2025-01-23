@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect,useState, useRef } from "react";
 import { useTranslation } from 'react-i18next'
 import styles from "./PlaceOfWedding.module.css"
 import { gsap } from "gsap";
@@ -9,7 +9,6 @@ const PlaceOfWeddingInfo = () => {
   const howToGetTitleRef = useRef(null);
   const mapRef= useRef(null);
   const howToGetTextRef = useRef(null);
-
 
   useEffect(() => {
     gsap.fromTo(
@@ -29,22 +28,9 @@ const PlaceOfWeddingInfo = () => {
             },
         }
     );
-    gsap.fromTo(
-        mapRef.current,
-        { opacity: 0.5, x: 450 }, 
-        {
-            opacity: 1,
-            x:0, 
-            duration: 1,
-            scrollTrigger: {
-                trigger: mapRef.current,
-                start: "top 90%", 
-                end: "top 40%", 
-                scrub: true,     
-            },
-        }
-    );
-}, []);
+   
+}); 
+
 useEffect(() => {
     const textElement = howToGetTextRef.current;
     const textContent = textElement.textContent;
