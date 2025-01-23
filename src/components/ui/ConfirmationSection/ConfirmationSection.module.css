@@ -1,6 +1,6 @@
 /* ConfirmationSection.module.css */
 
-.container {
+.confirmationSectionContainer {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -174,4 +174,5 @@
   height: 850px;
   border-radius: 5px;
   object-fit: cover;
+
 }
