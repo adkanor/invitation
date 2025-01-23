@@ -109,24 +109,20 @@
 
 }
 
-/* Стили при фокусе на инпуте */
 .musicInput:focus {
   outline: none;
-  /* Убираем стандартное обводку браузера */
   border-color: none;
-  /* Цвет рамки при фокусе */
 }
 
-/* Стили для подсказки (placeholder) */
 .musicInput::placeholder {
   font-size: 14px;
-  color: #aaa0a0;
+  color: #938686;
+  font-style: italic;
+  
 
 }
 
 .modalSendButton {
-  /* position: fixed;
-  left: 0; */
   height: 60px;
   background-color: rgba(58, 96, 138, 0.5);
   width: 100%;
@@ -152,23 +148,23 @@
 }
 input[type="checkbox"] {
   margin-right: 5px;
-  appearance: none; /* Скрываем стандартный вид чекбокса */
-  width: 20px; /* Ширина чекбокса */
-  height: 20px; /* Высота чекбокса */
-  border: 1px solid #3a608a; /* Граница */
-  border-radius: 4px; /* Углы (можно убрать для квадрата) */
-  background-color: #fff; /* Цвет фона */
-  cursor: pointer; /* Меняем курсор */
-  transition: background-color 0.3s, border-color 0.3s; /* Анимация */
+  appearance: none;
+  width: 20px; 
+  height: 20px; 
+  border: 1px solid #3a608a;
+  border-radius: 4px; 
+  background-color: #fff; 
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s; 
 }
 
 input[type="checkbox"]:checked {
-  background-color:rgba(58, 96, 138, 0.8); /* Цвет фона при выборе */
-  border-color: rgba(58, 96, 138, 0.8); /* Цвет границы при выборе */
+  background-color:rgba(58, 96, 138, 0.8); 
+  border-color: rgba(58, 96, 138, 0.8); 
 }
 
 input[type="checkbox"]:checked::after {
-  content: ''; /* Галочка */
+  content: '';
   display: block;
   width: 6px;
   height: 10px;
@@ -180,30 +176,29 @@ input[type="checkbox"]:checked::after {
 
 input[type="radio"] {
   margin-right: 5px;
-  appearance: none; /* Убираем стандартный вид радиокнопки */
-  width: 20px; /* Ширина радиокнопки */
-  height: 20px; /* Высота радиокнопки */
-  border: 1px solid #3a608a; /* Граница */
-  border-radius: 50%; /* Круглая форма */
-  background-color: #fff; /* Цвет фона */
-  cursor: pointer; /* Меняем курсор */
-  transition: background-color 0.3s, border-color 0.3s; /* Анимация */
-  position: relative; /* Для позиционирования точки */
+  appearance: none; 
+  width: 20px; 
+  height: 20px; 
+  border: 1px solid #3a608a;
+  border-radius: 50%; 
+  background-color: #fff; 
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+  position: relative; 
 }
 
 
 
-/* Внутренний круг при выбранной радиокнопке */
 input[type="radio"]:checked::after {
-  content: ''; /* Вложенный элемент */
+  content: '';
   display: block;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Центрируем */
-  width: 10px; /* Размер внутреннего круга */
-  height: 10px; /* Размер внутреннего круга */
-  border-radius: 50%; /* Круглая форма */
-  background-color: rgba(58, 96, 138, 0.8); /* Цвет внутреннего круга */
+  transform: translate(-50%, -50%); 
+  width: 10px; 
+  height: 10px; 
+  border-radius: 50%; 
+  background-color: rgba(58, 96, 138, 0.8); 
 }
 

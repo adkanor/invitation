@@ -1,0 +1,27 @@
+
+.footerSection{
+    color: #f9f9f4;
+    background-color: rgba(45, 74, 105, 0.8); 
+padding-top: 60px;
+padding-bottom: 60px;
+
+}
+
+.Logo_rounded {
+    display: block;
+    margin: 60px auto;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 50px;
+    border-radius: 50%;
+ }
+ 
+ .happyToSeeYou {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Tan Mon Cheri';
+    font-size: 36px;
+    font-weight: 400;
+    text-transform: uppercase;
+ }

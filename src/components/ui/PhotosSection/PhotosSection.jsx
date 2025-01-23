@@ -2,18 +2,22 @@ import React, { useLayoutEffect, useRef } from 'react';
 import styles from "./PhotosSection.module.css";
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import MainHeaderPhotoCouple from "../../../assets/images/we.jpg"
+import MainHeaderPhotoCouple2 from "../../../assets/images/we3.jpeg"
+import { useTranslation } from 'react-i18next';
+import Icon_hearts from "../../../assets/images/icon-hearts.png"
 
 gsap.registerPlugin(ScrollTrigger);
 
 const PhotosSection = () => {
   const sectionRef = useRef(null);
   const wrapperRef = useRef(null);
+  const { t } = useTranslation();
 
   useLayoutEffect(() => {
     const section = sectionRef.current;
     const wrapper = wrapperRef.current;
 
-    // Рассчитываем реальную ширину контента минус ширина окна
     const totalWidth = wrapper.scrollWidth - window.innerWidth;
 
     const tl = gsap.timeline({
@@ -25,17 +29,14 @@ const PhotosSection = () => {
         scrub: 1,
         anticipatePin: 1,
         invalidateOnRefresh: true,
-        markers: true, // Для отладки
       }
     });
 
-    // Анимация движения
     tl.to(wrapper, {
       x: -totalWidth,
       ease: 'none'
     });
 
-    // Очистка
     return () => {
       if (tl.scrollTrigger) {
         tl.scrollTrigger.kill();
@@ -46,15 +47,20 @@ const PhotosSection = () => {
   return (
     <section className={styles.photosWrapSection} ref={sectionRef} id="sectionPin">
       <div className={styles.photosWrap} ref={wrapperRef}>
-        <h2 className={styles.photosDesc}>Это мы — Катя и Леша. Два разных мира, которые сошлись в одном.  Каждое фото — это не просто момент, это история нашего путешествия, которое только начинается</h2>
+        <h2 className={styles.photosDesc}>  {t('headerHello')}
+        <img className={styles.photoSvg} src={Icon_hearts} alt="Icon hearts"/>
+        <span className={styles.photosDescSpan}>      {t('headerDescription')}
+        </span>
+        </h2>
+       
         <div className={styles.photoBlock} >
-          <img className={styles.photoImg} src="https://images.pexels.com/photos/5207262/pexels-photo-5207262.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900" alt=""/>
+          <img className={styles.photoImg} src={MainHeaderPhotoCouple2} alt="Main Header Couple "/>
         </div>
         <div className={styles.photoBlock}>
-          <img className={styles.photoImg} src="https://images.pexels.com/photos/3371358/pexels-photo-3371358.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900" alt=""/>
+          <img className={styles.photoImg} src={MainHeaderPhotoCouple} alt="Main Header Couple"/>
         </div>
         <div className={styles.photoBlock}>
-          <img className={styles.photoImg} src="https://images.pexels.com/photos/3618545/pexels-photo-3618545.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900" alt=""/>
+          <img className={styles.photoImg} src={MainHeaderPhotoCouple} alt="Main Header Couple"/>
         </div>
       </div>
     </section>

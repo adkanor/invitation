@@ -8,12 +8,12 @@ import styles from "./PersonalisedInvitation.module.css"
 import PlaceOfWeddingInfo from "../ui/PlaceOfWeddingInfo/PlaceOfWedding"
 import DressCode from "../ui/DressCode/DressCode"
 import CelebrationAgenda from "../ui/CelebrationAgenda/CelebrationAgenda"
-import Logo_rounded from "../../assets/images/Logo-rounded.svg"
 import ConfirmationSection from '../ui/ConfirmationSection/ConfirmationSection';
 import Header from "../ui/Header/Header.jsx"
 import { findGuestById } from '../../utils/findGuestById.js'; // Импортируем функцию
 import ScrollProgress from '../ui/ScrollProgress/ScrollProgress.jsx';
 import PhotosSection from "../ui/PhotosSection/PhotosSection.jsx"
+import Footer from "../ui/Footer/Footer.jsx"
 function PersonalisedInvitation() {
 
     const { t } = useTranslation();
@@ -55,14 +55,9 @@ function PersonalisedInvitation() {
             <DressCode></DressCode>
             <div className={styles.divider}></div>
             <ConfirmationSection guestName={guestName} ></ConfirmationSection>
-            <p className={styles.happyToSeeYou}>{t('happyToSeeYou')}</p>
-            <img className={styles.Logo_rounded} src={Logo_rounded} alt='Ceremony icon' />
-            <DressCode></DressCode>
-
-            <DressCode></DressCode>
-
-            <DressCode></DressCode>
-
+            <Footer></Footer>
+          
+           
 
 
         </>

@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'; // Хук для работы с
 import styles from './Header.module.css';
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher"
 import { Link } from 'react-scroll'; // Импортируем Link для прокрутки
+import Logo_rounded from "../../../assets/images/Logo-without-bg.svg"
 
 const Header = () => {
   const { t } = useTranslation(); // Получаем функцию t для перевода
@@ -11,7 +12,7 @@ const Header = () => {
     <header className={styles.header}>
       <section className={styles.headerSection}>
         <div className={styles.navItem}>
-          Logo
+        <img className={styles.Logo_rounded} src={Logo_rounded} alt='Ceremony icon' />
         </div>
         <div className={styles.navItems}>
           <Link

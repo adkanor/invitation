@@ -4,7 +4,6 @@ import styles from "./ConfirmationSection.module.css";
 import Modal from "./Modal.jsx"
 import gsap from 'gsap'; // Импорт GSAP
 import Image from "../../../assets/images/dfdf.jpeg"
-import Image2 from "../../../assets/images/we.jpg"
 
 const ConfirmationSection = ({ guestName }) => {
     const { t } = useTranslation();

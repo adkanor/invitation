@@ -33,7 +33,6 @@ const dresscodeTitle = useRef(null);
                 start: "top 90%", 
                 end: "top 60%",  
                 toggleActions: "play none none none", 
-                markers: true,  
             },
         }
     );
