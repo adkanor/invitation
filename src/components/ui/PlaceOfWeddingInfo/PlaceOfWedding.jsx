@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useTranslation } from 'react-i18next'
 import styles from "./PlaceOfWedding.module.css"
-// import KoziGrodPanoram from "../../../assets/images/Orange_viewPoint.webp"
 import { gsap } from "gsap";
 
 const PlaceOfWeddingInfo = () => {

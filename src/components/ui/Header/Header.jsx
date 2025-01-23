@@ -1,12 +1,12 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next'; // Хук для работы с переводами
+import { useTranslation } from 'react-i18next'; 
 import styles from './Header.module.css';
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher"
-import { Link } from 'react-scroll'; // Импортируем Link для прокрутки
+import { Link } from 'react-scroll';
 import Logo_rounded from "../../../assets/images/Logo-without-bg.svg"
 
 const Header = () => {
-  const { t } = useTranslation(); // Получаем функцию t для перевода
+  const { t } = useTranslation(); 
 
   return (
     <header className={styles.header}>

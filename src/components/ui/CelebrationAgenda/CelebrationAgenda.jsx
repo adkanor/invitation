@@ -17,7 +17,6 @@ const CelebrationAgenda = () => {
     const agendaTitles = useRef([]);
     const agendaDescriptionTitleRefs = useRef([]);
 
-    // Заполняем рефы для каждого элемента
     const setAgendaTimeRef = (el) => {
         if (el && !agendaTimeRefs.current.includes(el)) {
             agendaTimeRefs.current.push(el);

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from "./ConfirmationSection.module.css";
 import Modal from "./Modal.jsx"
-import gsap from 'gsap'; // Импорт GSAP
+import gsap from 'gsap';
 import Image from "../../../assets/images/dfdf.jpeg"
 
 const ConfirmationSection = ({ guestName }) => {
@@ -33,15 +33,12 @@ const ConfirmationSection = ({ guestName }) => {
                 ease: 'power1.inOut',
             });
 
-        // Остановка анимации при открытии модалки
         if (isModalOpen) {
             shakeAnimation.pause();
         } else {
             shakeAnimation.resume();
         }
 
-
-        // Очистка анимации при размонтировании компонента
         return () => shakeAnimation.kill();
     }, [isModalOpen]);
 

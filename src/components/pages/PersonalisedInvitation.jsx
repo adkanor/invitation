@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
-import { useParams } from 'react-router-dom'; // Import useParams to extract URL parameters
-// import guests from '../../data/guests';
+import { useParams } from 'react-router-dom'; 
 
 import { useTranslation } from 'react-i18next'
 import i18n from '../../utils/i18n';
@@ -10,7 +9,7 @@ import DressCode from "../ui/DressCode/DressCode"
 import CelebrationAgenda from "../ui/CelebrationAgenda/CelebrationAgenda"
 import ConfirmationSection from '../ui/ConfirmationSection/ConfirmationSection';
 import Header from "../ui/Header/Header.jsx"
-import { findGuestById } from '../../utils/findGuestById.js'; // Импортируем функцию
+import { findGuestById } from '../../utils/findGuestById.js'; 
 import ScrollProgress from '../ui/ScrollProgress/ScrollProgress.jsx';
 import PhotosSection from "../ui/PhotosSection/PhotosSection.jsx"
 import Footer from "../ui/Footer/Footer.jsx"
@@ -20,7 +19,6 @@ function PersonalisedInvitation() {
     const guestId = useParams();
     const language = i18n.language;
     const guestInfo = findGuestById(guestId.id);
-    // const guestInfo = guests.find(guest => guest.id === guestId.id)
 
     useEffect(() => {
         sessionStorage.setItem('guestId', guestId.id);

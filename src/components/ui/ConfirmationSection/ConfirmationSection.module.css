@@ -1,4 +1,3 @@
-/* ConfirmationSection.module.css */
 
 .confirmationSectionContainer {
   display: flex;
@@ -26,9 +25,7 @@
   align-items: center;
   position: sticky;
   top: 300px;
-  /* Отступ от верхней границы окна */
   z-index: 10;
-  /* Обеспечивает, что элемент будет на переднем плане */
 
 }
 
@@ -39,23 +36,18 @@
 
 .confirmationSection::before {
   content: '';
-  /* Псевдоэлемент без текста */
   position: absolute;
-  /* Позиционируем поверх фона */
   top: 0;
   width: 100%;
   height: 100%;
   background: rgba(255, 255, 255, 0.5);
-  /* Черный полупрозрачный слой */
   border-radius: 10px;
-  /* Чтобы псевдоэлемент совпадал с границами блока */
   z-index: 1;
 }
 
 .confirmationSection>* {
   position: relative;
   z-index: 2;
-  /* Текст и другие элементы будут над полупрозрачным слоем */
 }
 
 .confirmationSectionTitle {

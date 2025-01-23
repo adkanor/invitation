@@ -59,38 +59,6 @@ const Modal = ({ isOpen, onClose }) => {
   const handlePlusOneNameChange = (event) => setPlusOneName(event.target.value);
   const handlePlusOneAgeChange = (event) => setPlusOneAge(event.target.value);
 
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-
-  //   const formData = new FormData();
-  //   formData.append('attendance', attendance);
-  //   formData.append('drink', drink.join(', '));  // Преобразуем массив напитков в строку
-  //   formData.append('music', music);
-  //   formData.append('help', help);
-  //   formData.append('guestId', guestId.id);
-  //   formData.append('guestId', guestInfo);
-  //   formData.append('plusOne', plusOne);
-  //   formData.append('plusOneName', plusOneName);
-  //   formData.append('plusOneAge', plusOneAge);
-
-  //   // try {
-  //   //   const response = await fetch('https://formspree.io/f/mnnnobbp', {
-  //   //     method: 'POST',
-  //   //     body: formData,
-  //   //     mode: 'no-cors', 
-  //   //   });
-
-  //   //   if (response.ok) {
-  //   //     console.log('Form successfully submitted!');
-  //   //     closeWithAnimation();  // Закрываем модалку с анимацией после успешной отправки
-  //   //   } else {
-  //   //     console.error('Form submission error');
-  //   //   }
-  //   // } catch (error) {
-  //   //   console.error('Error sending form:', error);
-  //   // }
-  // };
-
   return (
     <div className={styles.modalOverlay} onClick={onClose}>
       <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
@@ -156,7 +124,7 @@ const Modal = ({ isOpen, onClose }) => {
                 type="checkbox"
                 name="drink"
                 value="whiskey"
-                checked={drink.includes('whiskey')} // Проверяем, есть ли "whiskey" в массиве
+                checked={drink.includes('whiskey')} 
                 onChange={handleDrinkChange}
               /> {t('modalWhatToDrinkOptionWhiskey')}
             </label>
@@ -165,7 +133,7 @@ const Modal = ({ isOpen, onClose }) => {
                 type="checkbox"
                 name="drink"
                 value="champagne"
-                checked={drink.includes('champagne')} // Проверяем, есть ли "champagne" в массиве
+                checked={drink.includes('champagne')} 
                 onChange={handleDrinkChange}
               /> {t('modalWhatToDrinkOptionChampane')}
             </label>
@@ -174,7 +142,7 @@ const Modal = ({ isOpen, onClose }) => {
                 type="checkbox"
                 name="drink"
                 value="cocktails"
-                checked={drink.includes('cocktails')} // Проверяем, есть ли "cocktails" в массиве
+                checked={drink.includes('cocktails')} 
                 onChange={handleDrinkChange}
               /> {t('modalWhatToDrinkOptionCoctails')}
             </label>
@@ -183,7 +151,7 @@ const Modal = ({ isOpen, onClose }) => {
                 type="checkbox"
                 name="drink"
                 value="nonAlcohol"
-                checked={drink.includes('nonAlcohol')} // Проверяем, есть ли "nonAlcohol" в массиве
+                checked={drink.includes('nonAlcohol')} 
                 onChange={handleDrinkChange}
               /> {t('modalWhatToDrinkOptionNonAlcohol')}
             </label>          </div>
