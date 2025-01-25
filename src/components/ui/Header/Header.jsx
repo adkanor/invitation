@@ -15,30 +15,31 @@ const Header = () => {
         <img className={styles.Logo_rounded} src={Logo_rounded} alt='Ceremony icon' />
         </div>
         <div className={styles.navItems}>
-          <Link
-            to="plan"
-            smooth={true}
-            duration={500}
-             offset={-100}
-             activeClass={styles.activeLink}
-             spy={true}
-            className={styles.navItem}>
-            {t('plan')}
-          </Link>       <Link
+        <Link
             to="venue"
             smooth={true}
             duration={500} 
-            offset={-100}
+            offset={-150}
             activeClass={styles.activeLink}
             spy={true}
             className={styles.navItem}>
             {t('venue')}
           </Link>
+           <Link
+            to="plan"
+            smooth={true}
+            duration={500}
+             offset={-150}
+             activeClass={styles.activeLink}
+             spy={true}
+            className={styles.navItem}>
+            {t('plan')}
+          </Link> 
           <Link
             to="dress-code"
             smooth={true}
             duration={500}
-            offset={-100}
+            offset={-150}
             activeClass={styles.activeLink}
             spy={true}
             className={styles.navItem}>
@@ -48,7 +49,7 @@ const Header = () => {
             to="invitation"
             smooth={true}
             duration={500} 
-            offset={-100}
+            offset={-150}
             activeClass={styles.activeLink}
             spy={true}
             className={styles.navItem}>
