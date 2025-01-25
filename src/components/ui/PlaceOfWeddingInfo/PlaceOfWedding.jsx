@@ -11,6 +11,7 @@ const PlaceOfWeddingInfo = () => {
   const howToGetTextRef = useRef(null);
   const placeOfWeddingAdress = useRef(null);
   const venueAdress = useRef(null);
+  
   useEffect(() => {
     gsap.fromTo(
         howToGetTitleRef.current,
@@ -85,6 +86,19 @@ useEffect(() => {
     );
     
 }, []);
+useEffect(() => {
+    gsap.to('.placeOfWeddingPhoto', {
+        yPercent: -50, 
+        ease: 'none',
+        scrollTrigger: {
+            trigger: '.placeOfWeddingPhoto',  
+            start: 'top bottom',  
+            end: 'bottom top',   
+            scrub: true,
+        },
+    });
+}, []);
+
 
     return (
         <section id="venue">

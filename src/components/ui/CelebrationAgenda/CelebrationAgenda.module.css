@@ -90,6 +90,8 @@
     justify-content: flex-start;
     align-items: flex-start;
     max-height: 100%;
+    font-style: italic;
+
 }
 
 .agendaDescriptionTitle {
@@ -105,15 +107,14 @@
 }
 
 .agendaDescriptionText {
-    font-size: 18px;
+    font-size: 20px;
     margin-left: 10px;
-
 }
 
 
 @media (max-width: 900px) {
     .agendaTitle {
-        font-size: 28px;
+        font-size: 30px;
     }
 
     .agendaContainer {
@@ -136,31 +137,32 @@
     }
 
     .dot {
-        left: -2px;
+        left: -3.5px;
     }
 
     .agendaDescription {
         margin-left: 40px;
+
     }
 
     .agendaDescriptionTitle {
-        font-size: 22px;
+        font-size: 24px;
     }
 
     .agendaDescriptionText {
-        font-size: 16px;
+        font-size: 20px;
     }
 }
 
 @media (max-width: 600px) {
     .agendaTitle {
-        font-size: 24px;
+        font-size: 30px;
     }
 
     .agendaContainer {
         max-width: 100%;
         transform: translateX(0);
-        margin-bottom: 40px;
+        margin-bottom: 60px;
         height: auto;
     }
 
@@ -187,10 +189,10 @@
     }
 
     .agendaDescriptionTitle {
-        font-size: 20px;
+        font-size: 24px;
     }
 
     .agendaDescriptionText {
-        font-size: 14px;
+        font-size: 18px;
     }
 }

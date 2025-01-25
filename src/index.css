@@ -1,4 +1,4 @@
-html {
+html, body {
   scroll-behavior: smooth;
 }
 
@@ -62,4 +62,10 @@ body::-webkit-scrollbar {
     url('./assets/fonts/tan-mon-cheri.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
+}
+
+@media (max-width: 768px) {
+  html {
+    overflow-x: hidden;
+  }
 }

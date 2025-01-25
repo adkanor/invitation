@@ -20,15 +20,15 @@ padding-bottom: 60px;
     margin-top: 20px;
     text-align: center;
     font-family: 'Tan Mon Cheri';
-    font-size: 36px;
+    font-size: 40px;
     font-weight: 400;
     text-transform: uppercase;
  }
  .happyToSeeYouText{
    display: block;
    margin: auto;
-   max-width: 800px;
-   font-size: 16px;
+   max-width: 1200px;
+   font-size: 24px;
    font-weight: 400; 
    font-style: italic;
    text-align: center;
@@ -84,7 +84,7 @@ padding-bottom: 60px;
    }
  
    .happyToSeeYouText {
-     font-size: 12px;
+     font-size: 18px;
      max-width: 600px;
    }
  }

@@ -28,12 +28,12 @@
   padding: 20px;
   border-radius: 10px;
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  max-height: 50vw;
+  max-height: 80vh;
+  height: 100%;
   overflow-y: auto;
   position: relative;
-  
 }
 
 .modalTitleSection {
@@ -116,7 +116,7 @@
 
 .musicInput::placeholder {
   font-size: 14px;
-  color: #938686;
+  color: rgba(58, 96, 138, 0.5);
   font-style: italic;
   
 
@@ -208,11 +208,12 @@ input[type="radio"]:checked::after {
 @media (max-width: 900px) {
   .modalContent {
     max-width: 80%;
-    max-height: 80vw;
+    max-height: 75vh;
+    height: 100%;
   }
 
   .modalTitle {
-    font-size: 22px;
+    font-size: 26px;
     margin-top: 10px;
   }
 
@@ -231,16 +232,16 @@ input[type="radio"]:checked::after {
   }
 
   .radioOption {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .musicInput {
-    font-size: 14px;
+    font-size: 16px;
     padding: 10px 8px;
   }
 
   .modalSendButton {
-    font-size: 14px;
+    font-size: 16px;
     padding: 14px 18px;
   }
 
@@ -272,12 +273,12 @@ input[type="radio"]:checked::after {
 @media (max-width: 600px) {
   .modalContent {
     max-width: 80%;
-    max-height: 80vw;
+    max-height: 75vh;
     height: 100%;
   }
 
   .modalTitle {
-    font-size: 20px;
+    font-size: 26px;
     margin-top: 8px;
   }
 
@@ -292,21 +293,21 @@ input[type="radio"]:checked::after {
   .modalNeedPlusOne,
   .modalPlusOneNameLabel,
   .modalPlusOneAgeLabel {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .radioOption {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .musicInput {
-    font-size: 12px;
+    font-size: 16px;
     padding: 8px 6px;
   }
 
   .modalSendButton {
-    font-size: 12px;
-    padding: 12px 16px;
+    font-size: 16px;
+    padding: 10px 14px;
   }
 
   input[type="checkbox"],

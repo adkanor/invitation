@@ -60,7 +60,7 @@ const ConfirmationSection = ({ guestName }) => {
             </div>
             <Modal isOpen={isModalOpen} onClose={closeModal} />
             <div className={styles.rightForm}>
-               <img className={styles.formImage} src={Image} alt="image" />
+               <img className={styles.formImage} src={Image} alt="selfie of couple loving each other" />
                
            
 
