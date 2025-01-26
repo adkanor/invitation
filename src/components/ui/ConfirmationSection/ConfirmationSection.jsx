@@ -50,7 +50,6 @@ const ConfirmationSection = ({ guestName }) => {
                     <p>    <span>{guestName ? ` ${guestName} ` : ''}
 
                     </span>
-                    {/* {t('rsvpAreYouComming')} */}
                     </p>
                     <p className={styles.confirmationDescription}>{t('rsvpDescription')}</p>
                 </div>

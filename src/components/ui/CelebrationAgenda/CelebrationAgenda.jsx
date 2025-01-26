@@ -109,7 +109,7 @@ const CelebrationAgenda = () => {
                     <div className={styles.agendaItem}>
                         <div className={styles.agendaTime} ref={setAgendaTimeRef}>
                             <img className={styles.agendaSvg} src={LocationIcon} alt='Ceremony icon' />
-                            <span>15:00</span>
+                            <span>15:30</span>
                         </div>
                         <div className={styles.dot}></div>
                         <div className={styles.agendaDescription}  >

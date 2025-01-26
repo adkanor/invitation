@@ -10,7 +10,7 @@ const Timer = () => {
     const invitationText = useRef(null);
     const calendarRef = useRef(null);
     const countdownRef = useRef(null);
-
+const invitationTextTwo = useRef(null);
     //Countdown render
     const renderer = ({ days, hours, minutes, seconds }) => (
         <div className={styles.countdown}>
@@ -60,6 +60,33 @@ const Timer = () => {
                 }
             );
         }
+        const textElementTwo = invitationTextTwo.current;
+        const textContentTwo = textElementTwo.textContent;
+
+        if (textContentTwo && textElementTwo) {
+            textElementTwo.innerHTML = textContentTwo
+                .split("")
+                .map(char => `<span>${char}</span>`)
+                .join("");
+
+            gsap.fromTo(
+                textElementTwo.querySelectorAll("span"),
+                { opacity: 0, y: 50 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.5,
+                    stagger: 0.03,
+                    delay: 2,
+                    scrollTrigger: {
+                        trigger: textElementTwo,
+                        start: "top bottom",
+                        toggleActions: "play none none none",
+                    },
+                }
+            );
+        }
+        
         if (window.innerWidth > 768) {
             const calendarElement = calendarRef.current;
             const countdownElement = countdownRef.current;
@@ -85,6 +112,9 @@ const Timer = () => {
                 <h2 className={styles.invitationTitle}>{t('weddingInvitationTitle')}</h2>
                 <p ref={invitationText} className={styles.invitationText}>
                     {t('weddingInvitationText')}
+                </p>
+                <p ref={invitationTextTwo} className={styles.invitationTextTwo}>
+                    {t('weddingInvitationTextTwo')}
                 </p>
                 <div className={styles.flexContainer}>
                     <div className={styles.calendarWrap} ref={calendarRef}>

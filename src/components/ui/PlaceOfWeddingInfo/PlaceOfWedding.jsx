@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from 'react-i18next'
 import styles from "./PlaceOfWedding.module.css"
 import { gsap } from "gsap";
-
+import Toast from '../Toast/Toast'; 
 const PlaceOfWeddingInfo = () => {
     const { t } = useTranslation();
     const placeOfWeddingTitleRef = useRef(null);
@@ -10,6 +10,21 @@ const PlaceOfWeddingInfo = () => {
     const mapRef = useRef(null);
     const howToGetTextRef = useRef(null);
     const placeOfWeddingAdress = useRef(null);
+    const venueAdressRef = useRef(null);
+    const [toastMessage, setToastMessage] = useState(null);
+
+    const handleCopyClick = () => {
+        setToastMessage(null); 
+        const textToCopy = venueAdressRef.current.textContent;
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            setToastMessage("Адрес скопирован в буфер обмена!"); 
+        }).catch(err => {
+            setToastMessage("Не удалось скопировать адрес.");
+        });
+    };
+    const handleToastClose = () => {
+        setToastMessage(null); 
+    };
 
     useEffect(() => {
         gsap.fromTo(
@@ -23,7 +38,7 @@ const PlaceOfWeddingInfo = () => {
                 duration: 1.7,
                 scrollTrigger: {
                     trigger: howToGetTitleRef.current,
-                    start: "top bottom", 
+                    start: "top bottom",
                     end: "top 60%",
                     toggleActions: "play none none none",
                 },
@@ -31,20 +46,20 @@ const PlaceOfWeddingInfo = () => {
         );
         gsap.fromTo(
             placeOfWeddingTitleRef.current,
-          { opacity: 0, scale: 0.8, color: "#ff914d", },
-          {
-              opacity: 1,
-              scale: 1,
-              color: "#ff911d",
-    
-              duration: 1.7,
-              scrollTrigger: {
-                  trigger: placeOfWeddingTitleRef.current,
-                  start: "top bottom", 
-                  end: "top 60%",
-                  toggleActions: "play none none none",
-              },
-          }
+            { opacity: 0, scale: 0.8, color: "#ff914d", },
+            {
+                opacity: 1,
+                scale: 1,
+                color: "#ff911d",
+
+                duration: 1.7,
+                scrollTrigger: {
+                    trigger: placeOfWeddingTitleRef.current,
+                    start: "top bottom",
+                    end: "top 60%",
+                    toggleActions: "play none none none",
+                },
+            }
         );
     });
     useEffect(() => {
@@ -67,7 +82,7 @@ const PlaceOfWeddingInfo = () => {
                     stagger: 0.03,
                     scrollTrigger: {
                         trigger: textElement,
-                        start: "top bottom", 
+                        start: "top bottom",
                         toggleActions: "play none none none",
                     },
                 }
@@ -108,14 +123,20 @@ const PlaceOfWeddingInfo = () => {
         <section id="venue">
             <div className={styles.placeOfWeddingSection}>
                 <h2 ref={placeOfWeddingTitleRef} className={styles.placeOfWeddingTitle}>{t('venueTitle')}</h2>
-                <p  ref={placeOfWeddingAdress} className={styles.placeOfWeddingText}>{t('venueDescription')}</p>
+                <p ref={placeOfWeddingAdress} className={styles.placeOfWeddingText}>{t('venueDescription')}</p>
             </div>
             <div className={styles.parallaxContainer}>
                 <div className={styles.parallaxElement}>
-                    <p className={styles.placeOfWeddingAdress}>{t('venueAdress')}</p>
+                    <p ref={venueAdressRef}
+                        className={styles.placeOfWeddingAdress}
+                        onClick={handleCopyClick}
+                    >{t('venueAdress')}</p>
 
                 </div>
             </div>
+               {toastMessage && <Toast message={toastMessage} onClose={handleToastClose} />}
+
+
             {/* <div className={styles.placeOfWeddingPhoto}></div> */}
             <div className={styles.howToGetSection}>
                 <div className={styles.howToGetInfo}>
