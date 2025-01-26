@@ -47,6 +47,7 @@ const PhotosSection = () => {
   }, []);
 
   return (
+    <>
     <section className={styles.photosWrapSection} ref={sectionRef} id="sectionPin">
       <div className={styles.photosWrap} ref={wrapperRef}>
         <h2 className={styles.photosDesc}>  {t('headerHello')}
@@ -65,6 +66,7 @@ const PhotosSection = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
