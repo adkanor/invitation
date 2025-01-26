@@ -1,9 +1,11 @@
 .invitationSection {
     background: linear-gradient(
         to bottom,
-        rgba(45, 74, 105, 0.8),
+        rgba(45, 74, 105, 1),
         #f9f9f4
-    );    padding: 60px 0;
+    );   
+    padding-top: 40px;
+     padding-bottom: 80px;
     text-align: center;
     color: #f9f9f4;
 
@@ -17,7 +19,7 @@
 
 .invitationTitle {
     font-family: 'Tan Mon Cheri';
-    font-size: 40px;
+    font-size: 60px;
     font-weight: 400; 
     text-transform: uppercase;
     color: #ff914d;
@@ -25,7 +27,7 @@
 
 .invitationText {
     margin-top: 20px;
-    font-size: 16px;
+    font-size: 26px;
     font-weight: 400; 
     font-style: italic;
 }
@@ -70,6 +72,7 @@
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     min-width: 70px;
+    width: 90px;
 }
 
 .timeValue {
@@ -83,4 +86,127 @@
     font-size: 20px;
 
     color: #ff911d;
+}
+
+
+/* Календарь */
+.calendarWrap {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.calendarTitle {
+    font-size: 1.8rem;
+    color: #ff914d;
+    margin-bottom: 20px;
+}
+
+.calendar {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.day {
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    width: 40px;
+    height: 40px;
+    color: rgba(45, 74, 105, 1);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: center;
+    font-weight: normal;
+    transition: transform 0.2s;
+}
+
+.day:hover {
+    transform: scale(1.1);
+}
+
+.highlightedDay {
+    background-color: #ff914d;
+    color: #fff;
+    transform: scale(1.2);
+    font-weight: bold;
+    border: 1px solid #ff914d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Адаптивные стили для меньших экранов */
+@media (max-width: 768px) {
+    .invitationTitle {
+        font-size: 30px;
+    }
+
+    .invitationText,
+    .invitationMessage {
+        font-size: 14px;
+    }
+
+    .invitationSubText {
+        font-size: 1rem;
+    }
+
+    .countdownTitle {
+        font-size: 1.3rem;
+    }
+
+    .timeBlock {
+        min-width: 60px;
+        width: 60px;
+        padding: 8px;
+    }
+
+    .timeValue {
+        font-size: 32px;
+    }
+
+    .timeLabel {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .invitationTitle {
+        font-size: 24px;
+    }
+
+    .invitationText,
+    .invitationMessage {
+        font-size: 12px;
+    }
+
+    .invitationSubText {
+        font-size: 0.9rem;
+    }
+
+    .countdownTitle {
+        font-size: 1.1rem;
+    }
+
+    .countdown {
+        gap: 10px;
+    }
+
+    .timeBlock {
+        padding: 6px;
+    }
+
+    .timeValue {
+        font-size: 28px;
+    }
+
+    .timeLabel {
+        font-size: 14px;
+    }
 }

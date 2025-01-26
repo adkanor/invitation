@@ -31,3 +31,6 @@
    margin: 0px auto;
    margin-bottom: 60px;
 }
+.darkBackground{
+   background-color: rgba(45, 74, 105, 1);
+}

@@ -44,9 +44,12 @@ function PersonalisedInvitation() {
             <ScrollProgress />
             <Header></Header>
 
+            <div className={styles.darkBackground}>
+                <PhotosSection></PhotosSection>
+                <Timer></Timer>
+            </div>
 
-            <PhotosSection></PhotosSection>
-            <Timer></Timer>
+
             <div className={styles.divider}></div>
             <PlaceOfWeddingInfo></PlaceOfWeddingInfo>
             <div className={styles.divider}></div>
