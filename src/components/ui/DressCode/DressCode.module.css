@@ -1,3 +1,6 @@
+.dresscodeWrapper{
+position: relative;
+}
 .dresscodeSection {
   width: 100%;
   max-width: 1400px;
@@ -57,6 +60,13 @@
   transform: scale(2);
   opacity: 0;
 }
+.flowersSvg {
+  position: absolute;
+  top: -50px; 
+  right: -100px; 
+  width: 300px; 
+  height: 300px; 
+}
 @media (max-width: 900px) {
   .dresscodeSection {
     padding: 20px;
@@ -83,6 +93,14 @@
 
   .dresscodeCircle:hover {
     transform: scale(1.5);
+  }
+  .flowersSvg {
+    position: absolute;
+    top: -120px; 
+    right: -100px; 
+    width: 200px; 
+    height: 300px; 
+    z-index: -1;
   }
 }
 

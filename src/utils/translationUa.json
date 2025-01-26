@@ -17,6 +17,15 @@
     "hours": "Години",
     "minutes": "Хвилини",
     "seconds": "Секунди",
+    "weekdays": {
+      "mon": "Пн",
+      "tue": "Вт",
+      "wed": "Ср",
+      "thu": "Чт",
+      "fri": "Пт",
+      "sat": "Сб",
+      "sun": "Нд"
+    },
     "dresscodeTitle": "Дрес-код",
     "dresscodeNotRequired": "Дрес-код не обов'язковий!",
     "dresscodeDescription": "Ми лише ділимося нашими вподобаннями, щоб вам було зручніше.",

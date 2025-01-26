@@ -7,13 +7,11 @@ import { gsap } from "gsap";
 const Timer = () => {
     const { t } = useTranslation();
     const weddingDate = new Date('2025-05-05T00:00:00');
-    const month = t("May");
-    const daysInMonth = 31;
-    const weddingDay = 5;
     const invitationText = useRef(null);
     const calendarRef = useRef(null);
     const countdownRef = useRef(null);
-    // Рендер-функция для Countdown
+
+    //Countdown render
     const renderer = ({ days, hours, minutes, seconds }) => (
         <div className={styles.countdown}>
             <div className={styles.timeBlock}>
@@ -34,6 +32,8 @@ const Timer = () => {
             </div>
         </div>
     );
+
+    //Animation
     useEffect(() => {
         const textElement = invitationText.current;
         const textContent = textElement.textContent;
@@ -60,7 +60,7 @@ const Timer = () => {
                 }
             );
         }
-           if (window.innerWidth > 768) {
+        if (window.innerWidth > 768) {
             const calendarElement = calendarRef.current;
             const countdownElement = countdownRef.current;
 
@@ -68,16 +68,17 @@ const Timer = () => {
                 scrollTrigger: {
                     trigger: calendarElement,
                     start: "top bottom",
-                    scrub: 0.5, 
-                
+                    scrub: 0.5,
+
                     toggleActions: "play none none reverse"
                 },
             })
-            .to(calendarElement, { y: -50, duration: 1 }, 0) 
-            .to(countdownElement, { y: -100, duration: 1 }, 0); 
+                .to(calendarElement, { y: -50, duration: 1 }, 0)
+                .to(countdownElement, { y: -100, duration: 1 }, 0);
         }
-    
+
     }, []);
+
     return (
         <section className={styles.invitationSection}>
             <div className={styles.invitationWrap}>
@@ -86,17 +87,30 @@ const Timer = () => {
                     {t('weddingInvitationText')}
                 </p>
                 <div className={styles.flexContainer}>
-                    {/* Календарь */}
                     <div className={styles.calendarWrap} ref={calendarRef}>
                         <h3 className={styles.calendarTitle}>{t('weddingDate')}: {t('weddingDateDetails')}</h3>
+
+                        {/*  calendar*/}
+
                         <div className={styles.calendar}>
-                            {Array.from({ length: daysInMonth }, (_, i) => {
-                                const day = i + 1;
+                            {['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'].map((day, index) => (
+                                <div key={index} className={styles.dayName}>
+                                    {t(`weekdays.${day}`)}
+                                </div>
+                            ))}
+
+                            {Array.from({ length: 3 }).map((_, index) => (
+                                <div key={`empty-${index}`} className={styles.day}></div>
+                            ))}
+
+                            {Array.from({ length: 31 }).map((_, index) => {
+                                const day = index + 1;
+                                const isHighlighted = day === 5;
+
                                 return (
                                     <div
                                         key={day}
-                                        className={`${styles.day} ${day === weddingDay ? styles.highlightedDay : ""
-                                            }`}
+                                        className={`${styles.day} ${isHighlighted ? styles.highlightedDay : ''}`}
                                     >
                                         {day}
                                     </div>
@@ -105,8 +119,9 @@ const Timer = () => {
                         </div>
                     </div>
 
-                    {/* Счетчик */}
-                    <div className={styles.countdownWrap}ref={ countdownRef} >
+                    {/* countdown */}
+
+                    <div className={styles.countdownWrap} ref={countdownRef} >
                         <h3 className={styles.countdownTitle}>{t('countdownTitle')}</h3>
                         <Countdown date={weddingDate} renderer={renderer} />
                     </div>

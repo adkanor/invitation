@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { useTranslation } from 'react-i18next';
 import styles from "./DressCode.module.css"
+import OrangeFlowers from "./OrangeFlowers.svg"
 
 const Dresscode = () => {
   const { t } = useTranslation();
@@ -99,6 +100,10 @@ const dresscodeTextOne = useRef(null);
 }, []);
 
   return (
+  
+<div className={styles.dresscodeWrapper}>
+<img className={styles.flowersSvg} src={OrangeFlowers} alt='flowersSvg' />
+
     <div className={styles.dresscodeSection} id="dress-code">
       <h2 ref={dresscodeTitle}  className={styles.dresscodeTitle}>{t('dresscodeTitle')}</h2>
       
@@ -115,7 +120,7 @@ const dresscodeTextOne = useRef(null);
           </div>
         ))}
       </div>
-    </div>
+    </div></div>
   );
 };
 

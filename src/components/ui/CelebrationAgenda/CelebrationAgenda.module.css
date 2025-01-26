@@ -1,3 +1,6 @@
+.agendaSectionWrapper{
+    position: relative;
+}
 .agendaSection {
     display: flex;
     flex-direction: column;
@@ -9,7 +12,13 @@
     box-sizing: border-box;
     position: relative;
 }
-
+.flowersSvg {
+    position: absolute;
+    bottom: 0px; 
+    left: -100px; 
+    width: 300px; 
+    height: 300px; 
+  }
 .agendaTitle {
     font-size: 36px;
     font-weight: 500;
@@ -113,6 +122,9 @@
 
 
 @media (max-width: 900px) {
+    .flowersSvg{
+    display: none;
+    }
     .agendaTitle {
         font-size: 30px;
     }

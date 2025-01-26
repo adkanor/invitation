@@ -7,7 +7,7 @@ import CeremonyIcon from "../../../assets/images/ceremonyIcon.svg"
 import DanceIcon from "../../../assets/images/danceIcon.svg"
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
+import OrangeAgendaFlower from "./OrangeAgendaFlower.svg"
 gsap.registerPlugin(ScrollTrigger);
 
 const CelebrationAgenda = () => {
@@ -96,7 +96,13 @@ const CelebrationAgenda = () => {
           },[]);
 
         return (
-            <div className={styles.agendaSection} id="plan">
+            <div className={styles.agendaSectionWrapper} >
+                
+                <img className={styles.flowersSvg} src={OrangeAgendaFlower} alt='flowersSvg' />
+
+            <div className={styles.agendaSection} id="plan"><div>
+
+            </div>
                 <h2 ref={agendaTitle} className={styles.agendaTitle}>{t('agendaTitle')}</h2>
                 <div className={styles.agendaContainer}>
                     <div className={styles.timeline}></div>
@@ -153,7 +159,7 @@ const CelebrationAgenda = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>  </div>
         );
     };
 

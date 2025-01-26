@@ -18,7 +18,15 @@
     "hours": "Hours",
     "minutes": "Minutes",
     "seconds": "Seconds",
-
+    "weekdays": {
+      "mon": "Mon",
+      "tue": "Tue",
+      "wed": "Wed",
+      "thu": "Thu",
+      "fri": "Fri",
+      "sat": "Sat",
+      "sun": "Sun"
+    },
     "dresscodeTitle": "Dress Code",
     "dresscodeNotRequired": "The dress code is not mandatory!",
     "dresscodeDescription": "We’re simply sharing our preferences to help you feel more comfortable.",
