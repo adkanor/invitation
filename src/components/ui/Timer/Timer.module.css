@@ -1,0 +1,86 @@
+.invitationSection {
+    background: linear-gradient(
+        to bottom,
+        rgba(45, 74, 105, 0.8),
+        #f9f9f4
+    );    padding: 60px 0;
+    text-align: center;
+    color: #f9f9f4;
+
+}
+
+.invitationWrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.invitationTitle {
+    font-family: 'Tan Mon Cheri';
+    font-size: 40px;
+    font-weight: 400; 
+    text-transform: uppercase;
+    color: #ff914d;
+}
+
+.invitationText {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 400; 
+    font-style: italic;
+}
+
+.invitationSubText {
+    font-size: 1.1rem;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #ff911d;
+}
+
+.invitationMessage {
+    font-size: 16px;
+    font-weight: 400; 
+    font-style: italic;
+    margin-top: 30px;
+}
+
+.countdownWrap {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.countdownTitle {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ff911d;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.timeBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 70px;
+}
+
+.timeValue {
+    font-size: 40px;
+    margin: 10px 16px;
+    font-weight: bold;
+    color: rgba(45, 74, 105, 1);
+}
+
+.timeLabel {
+    font-size: 20px;
+
+    color: #ff911d;
+}

@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react';
-import { useParams } from 'react-router-dom'; 
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 import { useTranslation } from 'react-i18next'
 import i18n from '../../utils/i18n';
@@ -9,10 +9,11 @@ import DressCode from "../ui/DressCode/DressCode"
 import CelebrationAgenda from "../ui/CelebrationAgenda/CelebrationAgenda"
 import ConfirmationSection from '../ui/ConfirmationSection/ConfirmationSection';
 import Header from "../ui/Header/Header.jsx"
-import { findGuestById } from '../../utils/findGuestById.js'; 
+import { findGuestById } from '../../utils/findGuestById.js';
 import ScrollProgress from '../ui/ScrollProgress/ScrollProgress.jsx';
 import PhotosSection from "../ui/PhotosSection/PhotosSection.jsx"
 import Footer from "../ui/Footer/Footer.jsx"
+import Timer from "../ui/Timer/Timer.jsx"
 function PersonalisedInvitation() {
 
     const { t } = useTranslation();
@@ -39,13 +40,14 @@ function PersonalisedInvitation() {
 
     return (
         <>
-     
-         <ScrollProgress/>
+
+            <ScrollProgress />
             <Header></Header>
-           
+
 
             <PhotosSection></PhotosSection>
-
+            <Timer></Timer>
+            <div className={styles.divider}></div>
             <PlaceOfWeddingInfo></PlaceOfWeddingInfo>
             <div className={styles.divider}></div>
             <CelebrationAgenda></CelebrationAgenda>
@@ -54,8 +56,8 @@ function PersonalisedInvitation() {
             <div className={styles.divider}></div>
             <ConfirmationSection guestName={guestName} ></ConfirmationSection>
             <Footer></Footer>
-          
-           
+
+
 
 
         </>

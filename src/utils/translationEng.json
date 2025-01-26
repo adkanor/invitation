@@ -7,6 +7,18 @@
     "venueAdress": "Lesnikow Street 3, 83-047 Pomlewo, PL",
     "howToGet": "How to get there?",
     "transportation": "You can only reach Kozi Grod by private transport or taxi. We've also prepared a map for you to make your journey easier and quicker!",
+   
+    "weddingInvitationTitle": "We Are Getting Married!",
+    "weddingInvitationText": "It is with great joy and excitement that we invite you to join us on our special day. Your presence will make our celebration even more unforgettable.",
+    "weddingDate": "Wedding Date",
+    "weddingDateDetails": "Saturday, June 15, 2025",
+    "weddingMessage": "We can’t wait to share this beautiful day with you!",  
+    "countdownTitle": "Countdown to the Big Day",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds",
+
     "dresscodeTitle": "Dress Code",
     "dresscodeNotRequired": "The dress code is not mandatory!",
     "dresscodeDescription": "We’re simply sharing our preferences to help you feel more comfortable.",
