@@ -47,9 +47,11 @@ const ConfirmationSection = ({ guestName }) => {
             <div className={styles.confirmationSection}>
                 <h3 className={styles.confirmationSectionTitle}>{t('rsvpTitle')}</h3>
                 <div className={styles.confirmationText}>
-                    <p>    <span>{guestName ? ` ${guestName}, ` : ''}
+                    <p>    <span>{guestName ? ` ${guestName} ` : ''}
 
-                    </span>{t('rsvpAreYouComming')}</p>
+                    </span>
+                    {/* {t('rsvpAreYouComming')} */}
+                    </p>
                     <p className={styles.confirmationDescription}>{t('rsvpDescription')}</p>
                 </div>
 
