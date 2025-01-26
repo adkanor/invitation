@@ -26,9 +26,7 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  will-change: transform;
   margin-bottom: 80px;
-  overflow: hidden; 
   perspective: 1px;
 }
 .parallaxContainer::before {

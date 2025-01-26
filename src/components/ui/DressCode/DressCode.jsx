@@ -22,20 +22,20 @@ const dresscodeTextOne = useRef(null);
   useEffect(() => {
     gsap.fromTo(
       dresscodeTitle.current,
-        { opacity: 0, scale: 1, color: "#ff914d", y: 50 }, 
-        {
-            opacity: 1,
-            scale: 1.2,
-            color: "#ff911d", 
-            y: 0,
-            duration: 0.7, 
-            scrollTrigger: {
-                trigger: dresscodeTitle.current,
-                start: "top 90%", 
-                end: "top 60%",  
-                toggleActions: "play none none none", 
-            },
-        }
+      { opacity: 0, scale: 0.8, color: "#ff914d", },
+      {
+          opacity: 1,
+          scale: 1,
+          color: "#ff911d",
+
+          duration: 1.7,
+          scrollTrigger: {
+              trigger: dresscodeTitle.current,
+              start: "top bottom", 
+              end: "top 60%",
+              toggleActions: "play none none none",
+          },
+      }
     );
   },[]);
 
@@ -61,7 +61,7 @@ const dresscodeTextOne = useRef(null);
                 stagger: 0.03,
                 scrollTrigger: {
                     trigger: textElement,
-                    start: "top 80%",
+                    start: "top bottom", 
                     toggleActions: "play none none none",
                 },
             }
@@ -90,7 +90,7 @@ const dresscodeTextOne = useRef(null);
                 delay: 1, 
                 scrollTrigger: {
                     trigger: textElement,
-                    start: "top 80%",
+                    start: "top bottom", 
                     toggleActions: "play none none none",
                 },
             }

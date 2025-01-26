@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const CelebrationAgenda = () => {
     const { t } = useTranslation();
-
+    const agendaTitle = useRef();
     const agendaTimeRefs = useRef([]);
     const agendaTitles = useRef([]);
     const agendaDescriptionTitleRefs = useRef([]);
@@ -32,6 +32,7 @@ const CelebrationAgenda = () => {
             agendaTitles.current.push(el);
         }
     };
+    
     useEffect(() => {
 
 
@@ -46,7 +47,7 @@ const CelebrationAgenda = () => {
                     duration: 0.7, 
                     scrollTrigger: {
                         trigger: agendaTitles.current,
-                        start: "top 90%", 
+                        start: "top bottom", 
                         end: "top 50%",  
                         toggleActions: "play none none none", 
                     },
@@ -56,13 +57,16 @@ const CelebrationAgenda = () => {
           
         gsap.fromTo(
             agendaDescriptionTitleRefs.current, 
-            { opacity: 0,  }, 
+            { opacity: 0, x:200 }, 
             {
                 opacity: 1,
+                x:0,
+                duration: 2, 
+
                 scrollTrigger: {
                     trigger: agendaDescriptionTitleRefs.current,
-                    start: "top 90%", 
-                    end: "bottom 20%", 
+                    start: "top bottom", 
+                    end: "bottom 50%", 
                      scrub: true,  
                 }
             }
@@ -71,11 +75,29 @@ const CelebrationAgenda = () => {
         
         }, []);
 
+        useEffect(() => {
+            gsap.fromTo(
+                agendaTitle.current,
+              { opacity: 0, scale: 0.8, color: "#ff914d", },
+              {
+                  opacity: 1,
+                  scale: 1,
+                  color: "#ff911d",
         
+                  duration: 1.7,
+                  scrollTrigger: {
+                      trigger: agendaTitle.current,
+                      start: "top bottom", 
+                      end: "top 60%",
+                      toggleActions: "play none none none",
+                  },
+              }
+            );
+          },[]);
 
         return (
             <div className={styles.agendaSection} id="plan">
-                <h2 className={styles.agendaTitle}>{t('agendaTitle')}</h2>
+                <h2 ref={agendaTitle} className={styles.agendaTitle}>{t('agendaTitle')}</h2>
                 <div className={styles.agendaContainer}>
                     <div className={styles.timeline}></div>
                     <div className={styles.agendaItem}>

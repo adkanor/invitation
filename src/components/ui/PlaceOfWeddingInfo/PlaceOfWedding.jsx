@@ -10,7 +10,6 @@ const PlaceOfWeddingInfo = () => {
     const mapRef = useRef(null);
     const howToGetTextRef = useRef(null);
     const placeOfWeddingAdress = useRef(null);
-    const venueAdress = useRef(null);
 
     useEffect(() => {
         gsap.fromTo(
@@ -24,41 +23,57 @@ const PlaceOfWeddingInfo = () => {
                 duration: 1.7,
                 scrollTrigger: {
                     trigger: howToGetTitleRef.current,
-                    start: "top 90%",
+                    start: "top bottom", 
                     end: "top 60%",
                     toggleActions: "play none none none",
                 },
             }
         );
-
+        gsap.fromTo(
+            placeOfWeddingTitleRef.current,
+          { opacity: 0, scale: 0.8, color: "#ff914d", },
+          {
+              opacity: 1,
+              scale: 1,
+              color: "#ff911d",
+    
+              duration: 1.7,
+              scrollTrigger: {
+                  trigger: placeOfWeddingTitleRef.current,
+                  start: "top bottom", 
+                  end: "top 60%",
+                  toggleActions: "play none none none",
+              },
+          }
+        );
     });
-    // useEffect(() => {
-    //     const textElement = placeOfWeddingAdress.current;
-    //     const textContent = textElement.textContent;
+    useEffect(() => {
+        const textElement = placeOfWeddingAdress.current;
+        const textContent = textElement.textContent;
 
-    //     if (textContent && textElement) {
-    //         textElement.innerHTML = textContent
-    //             .split("")
-    //             .map(char => `<span>${char}</span>`)
-    //             .join("");
+        if (textContent && textElement) {
+            textElement.innerHTML = textContent
+                .split("")
+                .map(char => `<span>${char}</span>`)
+                .join("");
 
-    //         gsap.fromTo(
-    //             textElement.querySelectorAll("span"),
-    //             { opacity: 0, y: 50 },
-    //             {
-    //                 opacity: 1,
-    //                 y: 0,
-    //                 duration: 0.5,
-    //                 stagger: 0.03,
-    //                 scrollTrigger: {
-    //                     trigger: textElement,
-    //                     start: "top 80%",
-    //                     toggleActions: "play none none none",
-    //                 },
-    //             }
-    //         );
-    //     }
-    // }, []);
+            gsap.fromTo(
+                textElement.querySelectorAll("span"),
+                { opacity: 0, y: 50 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.5,
+                    stagger: 0.03,
+                    scrollTrigger: {
+                        trigger: textElement,
+                        start: "top bottom", 
+                        toggleActions: "play none none none",
+                    },
+                }
+            );
+        }
+    }, []);
 
     useEffect(() => {
         const textElement = howToGetTextRef.current;
@@ -86,37 +101,14 @@ const PlaceOfWeddingInfo = () => {
         );
 
     }, []);
-    useEffect(() => {
-        // gsap.to('.placeOfWeddingPhoto', {
-        //     yPercent: -50, 
-        //     ease: 'none',
-        //     scrollTrigger: {
-        //         trigger: '.placeOfWeddingPhoto',  
-        //         start: 'top bottom',  
-        //         end: 'bottom top', 
-        //         scrub: true,
-        //         pin: true,           
-        //         markers: true,       
-        //     },
-        // });
-        gsap.to(`.${styles.parallaxElement}`, {
-            yPercent: -70,
-            ease: 'power1.out',
-            scrollTrigger: {
-                trigger: `.${styles.parallaxContainer}`,
-                scrub: 1,
-                markers: false,
-            }
-        });
 
-    }, []);
 
 
     return (
         <section id="venue">
             <div className={styles.placeOfWeddingSection}>
                 <h2 ref={placeOfWeddingTitleRef} className={styles.placeOfWeddingTitle}>{t('venueTitle')}</h2>
-                <p className={styles.placeOfWeddingText}>{t('venueDescription')}</p>
+                <p  ref={placeOfWeddingAdress} className={styles.placeOfWeddingText}>{t('venueDescription')}</p>
             </div>
             <div className={styles.parallaxContainer}>
                 <div className={styles.parallaxElement}>
