@@ -120,7 +120,7 @@ const PlaceOfWeddingInfo = () => {
 
 
     return (
-        <section id="venue">
+        <section id="venue" className={styles.venueSection}>
             <div className={styles.placeOfWeddingSection}>
                 <h2 ref={placeOfWeddingTitleRef} className={styles.placeOfWeddingTitle}>{t('venueTitle')}</h2>
                 <p ref={placeOfWeddingAdress} className={styles.placeOfWeddingText}>{t('venueDescription')}</p>
