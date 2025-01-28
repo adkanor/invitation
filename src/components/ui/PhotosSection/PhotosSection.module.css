@@ -82,6 +82,11 @@
 }
 
 @media (max-width: 600px) {
+  .photosWrapSection {
+    min-width: 100vw;
+    overflow: hidden;
+  }
+
   .photosDesc {
     font-size: 20px;
     width: 250px;

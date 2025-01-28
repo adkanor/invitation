@@ -20,7 +20,7 @@ const PhotosSection = () => {
     const section = sectionRef.current;
     const wrapper = wrapperRef.current;
 
-    const totalWidth = wrapper.scrollWidth - window.innerWidth;
+    const totalWidth = wrapper.offsetWidth - window.innerWidth;
 
     const tl = gsap.timeline({
       scrollTrigger: {
