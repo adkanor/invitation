@@ -164,6 +164,24 @@
     .agendaDescriptionText {
         font-size: 20px;
     }
+    .timeline {
+     left: 30px;
+    }
+    .agendaSvg{
+        width: 20px;
+        height: 20px;
+    }
+        .agendaTime {
+            font-size: 14px;
+            left: -10px;
+            bottom: 0px;
+        }
+    
+        .dot {
+            left: 26px;
+            width: 8px;
+            height: 8px;
+        }
 }
 
 @media (max-width: 600px) {
@@ -180,18 +198,24 @@
 
     .agendaItem {
         padding-top: 20px;
+        padding-left: 20px;
     }
 
     .agendaIcon {
         left: -120px;
     }
-
+.agendaSvg{
+    width: 20px;
+    height: 20px;
+}
     .agendaTime {
-        font-size: 20px;
-        left: -80px;
+        font-size: 14px;
+        left: -10px;
+        bottom: 0px;
     }
 
     .dot {
+        left: 26px;
         width: 8px;
         height: 8px;
     }

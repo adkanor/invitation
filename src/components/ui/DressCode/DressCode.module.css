@@ -1,5 +1,6 @@
 .dresscodeWrapper{
 position: relative;
+overflow: hidden;
 }
 .dresscodeSection {
   width: 100%;
@@ -96,11 +97,12 @@ position: relative;
   }
   .flowersSvg {
     position: absolute;
-    top: -120px; 
-    right: -100px; 
+    top: -70px; 
+    right: -120px; 
     width: 200px; 
     height: 300px; 
     z-index: -1;
+    overflow: hidden;
   }
 }
 
