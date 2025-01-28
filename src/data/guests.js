@@ -138,8 +138,8 @@ const guests = [
     id: '5699',
     info: 'Кирил',
     name: {
-      ru: 'Кирил, ты придешь?',
-      ua: 'Кирил, ти прийдеш?',
+      ru: 'Кирилл, ты придешь?',
+      ua: 'Кирило, ти прийдеш?',
       en: 'Kirill, will you come?'
     }
   },
@@ -148,7 +148,7 @@ const guests = [
     info: 'Никита мой брат',
     name: {
       ru: 'Никита, ты придешь?',
-      ua: 'Никита, ти прийдеш?',
+      ua: 'Микита, ти прийдеш?',
       en: 'Nikita, will you come?'
     }
   },
@@ -169,7 +169,54 @@ const guests = [
       ua: 'Роджер, ти прийдеш?',
       en: 'Roger, will you come?'
     }
-  }
+  },
+  {
+    id: '5708',
+    info: 'Бабушка Таня',
+    name: {
+      ru: 'Бабуля, ты придешь?',
+      ua: 'Бабуся, ти прийдеш?',
+      en: 'Grandma, will you come?'
+    }
+  },
+  {
+    id: '5709',
+    info: 'Бабушка Люда',
+    name: {
+      ru: 'Бабуля, ты придешь?',
+      ua: 'Бабуся, ти прийдеш?',
+      en: 'Grandma, will you come?'
+    }
+  },
+  {
+    id: '5710',
+    info: 'Дедушка',
+    name: {
+      ru: 'Дедуля, ты придешь?',
+      ua: 'Дідусь, ти прийдеш?',
+      en: 'Granddad, will you come?'
+    }
+  },
+  {
+    id: '5710',
+    info: 'Олег Мордовцев',
+    name: {
+      ru: 'Папуля, ты придешь?',
+      ua: 'Папуля, ти прийдеш?',
+      en: 'Dad, will you come?'
+    }
+  },
+  {
+    id: '5711',
+    info: 'Руслан ',
+    name: {
+      ru: 'Руслан, ты придешь?',
+      ua: 'Руслан, ти прийдеш?',
+      en: 'Ruslan, will you come?'
+    }
+  },
+
+
 ];
 
 export default guests;
