@@ -17,9 +17,9 @@ const PlaceOfWeddingInfo = () => {
         setToastMessage(null); 
         const textToCopy = venueAdressRef.current.textContent;
         navigator.clipboard.writeText(textToCopy).then(() => {
-            setToastMessage("Адрес скопирован в буфер обмена!"); 
+            setToastMessage(t('toast_message_copied')); 
         }).catch(err => {
-            setToastMessage("Не удалось скопировать адрес.");
+            setToastMessage(t('toast_message_copied_failed'));
         });
     };
     const handleToastClose = () => {

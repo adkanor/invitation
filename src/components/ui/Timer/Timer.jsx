@@ -130,7 +130,7 @@ const invitationTextTwo = useRef(null);
                             ))}
 
                             {Array.from({ length: 3 }).map((_, index) => (
-                                <div key={`empty-${index}`} className={styles.day}></div>
+                                <div key={`empty-${index}`} className={styles.epmtyDay}></div>
                             ))}
 
                             {Array.from({ length: 31 }).map((_, index) => {

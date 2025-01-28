@@ -61,7 +61,7 @@
     "modalWillToastLabel": "Will you give a toast?",
     "modalWillToastOptionYes": "Yes",
     "modalWillToastOptionNo": "No",
-    "modalToastNote": "We truly appreciate your willingness to speak at the wedding! It’s important to us that everyone feels comfortable, so feel free to talk about moments or experiences we've shared. If you’re already set to give a toast, it might help to rehearse it a little beforehand to make sure it flows smoothly. We’re sure it’ll be heartfelt and meaningful!",
+    "modalToastNote": "Ready to make a toast? Please let us know in advance so everyone can congratulate us.",
     "modalWhatToDrinkTitle": "Your drink preferences?",
     "modalWhatToDrinkOptionWine": "Wine",
     "modalWhatToDrinkOptionVodka": "Vodka",
@@ -80,6 +80,8 @@
     "modalPlusOneYes": "Yes",
     "modalPlusOneNo": "No",
     "modalPlusOneName": "Enter person's name",
-    "modalPlusOneAge": "Enter person's age"
+    "modalPlusOneAge": "Enter person's age",
+    "modalPlusOneNote":"Invitation only for adults. Children can be brought along without an invitation",
+    "toast_message_copied":"Copied"
   }
   

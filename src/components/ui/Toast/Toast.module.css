@@ -14,6 +14,8 @@
     z-index: 9999;
     opacity: 0;
     animation: fadeInOut 3s forwards;
+    max-width: 300px;
+    width: auto;
   }
   
   .toast p {

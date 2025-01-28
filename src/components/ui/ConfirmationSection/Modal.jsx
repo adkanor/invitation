@@ -266,11 +266,12 @@ const Modal = ({ isOpen, onClose }) => {
 
           {plusOne === 'yes' && (
             < div ref={toastAddintionalInviteRef}> 
-
+<span className={styles.modalPlusOneNote}>{t('modalPlusOneNote')}</span>
               <label className={styles.modalPlusOneNameLabel}>{t('modalPlusOneName')}</label>
               <input
                 type="text"
                 name="plusOneName"
+                placeholder={t('modalPlusOneName')}
                 value={plusOneName}
                 onChange={handlePlusOneNameChange}
                 className={styles.musicInput}
@@ -280,6 +281,7 @@ const Modal = ({ isOpen, onClose }) => {
               <input
                 type="text"
                 name="plusOneAge"
+                placeholder={t('modalPlusOneAge')}
                 value={plusOneAge}
                 onChange={handlePlusOneAgeChange}
                 className={styles.musicInput}

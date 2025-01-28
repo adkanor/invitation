@@ -10,6 +10,7 @@ const LanguageSwitcher = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const changeLanguage = (lang) => {
+    localStorage.setItem("language", lang);
     i18n.changeLanguage(lang);
     setIsOpen(false);
   };

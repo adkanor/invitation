@@ -11,17 +11,6 @@
   z-index: 15;
 }
 
-.closeBtn {
-  position: absolute;
-  top: 13px;
-  right: 5px;
-  background-color: transparent;
-  color: #3a608a;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-}
 
 .modalContent {
   background-color: #f9f9f4;
@@ -36,6 +25,22 @@
   position: relative;
 }
 
+.closeBtn {
+  position: sticky;
+  width: 100%;
+  top: 10px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: flex-end;
+  right: -300px;
+  background-color: transparent;
+  color: #3a608a;
+  border: none;
+  cursor: pointer;
+  font-size: 26px;
+  z-index: 10;
+}
+
 .modalTitleSection {
   display: flex;
   justify-content: space-between;
@@ -43,14 +48,15 @@
 
 .modalTitle {
   max-width: 420px;
-  margin-bottom: 20px;
-  margin-top: 10px;
   font-size: 26px;
   font-weight: 500;
   font-style: italic;
   color: #ff914d;
   text-transform: uppercase;
   text-align: center;
+  margin: auto;
+  margin-bottom: 20px;
+
 }
 
 .modalSubTitle {
@@ -71,7 +77,18 @@
   display: block;
   margin-bottom: 10px;
 }
+.modalPlusOneNameLabel{
+  margin-top: 10px;
 
+}
+.modalPlusOneNote{
+  font-size: 16px;
+
+}
+.toastNote{
+  margin-bottom: 10px;
+
+}
 .radioGroup {
   display: flex;
   flex-direction: column;

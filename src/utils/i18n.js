@@ -7,6 +7,10 @@ import enTranslation from './translationEng.json';
 import ukTranslation from './translationUa.json';
 import ruTranslation from './translationRu.json';
 
+const storedLang = localStorage.getItem('language');
+
+const language = storedLang && ['ru', 'ua', 'en'].includes(storedLang) ? storedLang : 'en';
+
 const resources = {
   en: {
     translation: enTranslation,
@@ -29,8 +33,8 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    fallbackLng: 'ua',
-    lng: 'en',
+    lng: language,
+    fallbackLng: "en",
     debug: true,
 
     interpolation: {

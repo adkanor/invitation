@@ -163,10 +163,11 @@
     margin-top: 20px;
   }
 
-  .confirmationText p {
-    font-size: 14px;
-  }
 
+.confirmationTextSpan{
+  font-size: 20px;
+
+}
   .openModalButton {
     font-size: 16px;
     padding: 10px 20px;
@@ -208,9 +209,7 @@
     font-size: 24px;
   }
 
-  .confirmationText {
-    font-size: 16px;
-  }
+
 
   .rightForm {
     width: 0%;
@@ -219,7 +218,7 @@
   }
 
   .confirmationText p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .openModalButton {
