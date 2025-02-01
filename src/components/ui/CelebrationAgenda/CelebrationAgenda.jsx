@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 const CelebrationAgenda = () => {
     const { t } = useTranslation();
     const { i18n } = useTranslation();
-    const lang = i18n.language;  
+    const lang = i18n.language;
     const agendaTitle = useRef();
     const agendaTimeRefs = useRef([]);
     const agendaTitles = useRef([]);
@@ -34,78 +34,78 @@ const CelebrationAgenda = () => {
             agendaTitles.current.push(el);
         }
     };
-    
+
     useEffect(() => {
 
 
-            gsap.fromTo(
-                agendaTitles.current,
-                { opacity: 0, scale: 0.7, color: "#ff914d", y: 20 }, 
-                {
-                    opacity: 1,
-                    scale: 1,
-                    color: "#ff911d", 
-                    y: 0,
-                    duration: 0.7, 
-                    scrollTrigger: {
-                        trigger: agendaTitles.current,
-                        start: "top bottom", 
-                        end: "top 50%",  
-                        toggleActions: "play none none none", 
-                    },
-                }
-            );
-
-          
         gsap.fromTo(
-            agendaDescriptionTitleRefs.current, 
-            { opacity: 0, x:200 }, 
+            agendaTitles.current,
+            { opacity: 0, scale: 0.7, color: "#ff914d", y: 20 },
             {
                 opacity: 1,
-                x:0,
-                duration: 2, 
-
+                scale: 1,
+                color: "#ff911d",
+                y: 0,
+                duration: 0.7,
                 scrollTrigger: {
-                    trigger: agendaDescriptionTitleRefs.current,
-                    start: "top bottom", 
-                    end: "bottom 50%", 
-                     scrub: true,  
-                }
+                    trigger: agendaTitles.current,
+                    start: "top bottom",
+                    end: "top 50%",
+                    toggleActions: "play none none none",
+                },
             }
         );
 
-        
-        }, []);
-
-        useEffect(() => {
+        if (window.innerWidth > 600) {
             gsap.fromTo(
-                agendaTitle.current,
-              { opacity: 0, scale: 0.8, color: "#ff914d", },
-              {
-                  opacity: 1,
-                  scale: 1,
-                  color: "#ff911d",
-        
-                  duration: 1.7,
-                  scrollTrigger: {
-                      trigger: agendaTitle.current,
-                      start: "top bottom", 
-                      end: "top 60%",
-                      toggleActions: "play none none none",
-                  },
-              }
-            );
-          },[]);
+                agendaDescriptionTitleRefs.current,
+                { opacity: 0, x: 200 },
+                {
+                    opacity: 1,
+                    x: 0,
+                    duration: 2,
 
-        return (
-            <div className={styles.agendaSectionWrapper} >
-                
-                <img className={styles.flowersSvg} src={OrangeAgendaFlower} alt='flowersSvg' />
+                    scrollTrigger: {
+                        trigger: agendaDescriptionTitleRefs.current,
+                        start: "top bottom",
+                        end: "bottom 50%",
+                        scrub: true,
+                    }
+                }
+            );
+        }
+
+    }, []);
+
+    useEffect(() => {
+        gsap.fromTo(
+            agendaTitle.current,
+            { opacity: 0, scale: 0.8, color: "#ff914d", },
+            {
+                opacity: 1,
+                scale: 1,
+                color: "#ff911d",
+
+                duration: 1.7,
+                scrollTrigger: {
+                    trigger: agendaTitle.current,
+                    start: "top bottom",
+                    end: "top 60%",
+                    toggleActions: "play none none none",
+                },
+            }
+        );
+    }, []);
+
+    return (
+        <div className={styles.agendaSectionWrapper} >
+
+            <img className={styles.flowersSvg} src={OrangeAgendaFlower} alt='flowersSvg' />
 
             <div className={styles.agendaSection} id="plan"><div>
 
             </div>
-                <h2 data-lang={lang}  ref={agendaTitle} className={styles.agendaTitle}>{t('agendaTitle')}</h2>
+                <h2 data-lang={lang} ref={agendaTitle} className={styles.agendaTitle}>{t('agendaTitle')}</h2>
                 <div className={styles.agendaContainer}>
                     <div className={styles.timeline}></div>
                     <div className={styles.agendaItem}>
@@ -118,7 +118,7 @@ const CelebrationAgenda = () => {
                             <div className={styles.agendaDescriptionTitle} ref={setAgendaTitlesRef}>
                                 {t('guestMeeting')}
                             </div>
-                            <div className={styles.agendaDescriptionText}ref={setAgendaDescriptionTitleRef}>{t('guestMeetingDescription')}</div>
+                            <div className={styles.agendaDescriptionText} ref={setAgendaDescriptionTitleRef}>{t('guestMeetingDescription')}</div>
                         </div>
                     </div>
                     <div className={styles.agendaItem}>
@@ -162,7 +162,7 @@ const CelebrationAgenda = () => {
                     </div>
                 </div>
             </div>  </div>
-        );
-    };
+    );
+};
 
-    export default CelebrationAgenda;
+export default CelebrationAgenda;
