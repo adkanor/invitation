@@ -9,7 +9,7 @@ import ruTranslation from './translationRu.json';
 
 const storedLang = localStorage.getItem('language');
 
-const language = storedLang && ['ru', 'ua', 'en'].includes(storedLang) ? storedLang : 'en';
+const language = storedLang && ['ru', 'ua', 'en'].includes(storedLang) ? storedLang : 'ru';
 
 const resources = {
   en: {
