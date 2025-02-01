@@ -23,8 +23,8 @@
   right: -350px;
   bottom: 0px;
   background:
-      radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, rgba(255, 255, 255, 0) 70%) left center,
-      radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, rgba(255, 255, 255, 0) 70%) right center;
+      radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, rgba(255, 255, 255, 0) 70%) left center,
+      radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, rgba(255, 255, 255, 0) 70%) right center;
   background-size: 700px 700px;
   background-position: left 0%, right 0%;
   background-repeat: no-repeat;

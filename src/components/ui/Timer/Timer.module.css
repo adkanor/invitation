@@ -92,13 +92,21 @@
 .calendarTitle {
     font-size: 24px;
     font-weight: 500;
-    font-style: italic;
     color: #ff914d;
     margin-bottom: 30px;
-    color: #f8f9fa;
+    color: rgba(248, 249, 250, 0.7);
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+
 
 }
+.calendarTitleSpan {
+    color: #f8f9fa;
+    font-weight: 700;
 
+
+}
 .day {
     font-family: 'Playfair Display', serif;
     cursor: pointer;
@@ -132,11 +140,12 @@
 .countdownTitle {
     font-size: 24px;
     font-weight: 500;
-    font-style: italic;
-    color: #f8f9fa;
+    color: rgba(248, 249, 250, 0.7);
     margin-bottom: 30px;
     text-align: start;
     margin-left: 40px;
+    display: flex;
+    align-items: center;
 
 }
 
@@ -291,11 +300,17 @@
         font-size: 0.9rem;
         text-align: center;
     }
+.calendarTitle{
+    justify-content: center;
+    margin-left: 0px;
 
+
+}
     .countdownTitle {
         font-size: 1.5rem;
         text-align: center;
         margin-left: 0px;
+        justify-content: center;
     }
 
     .countdown {

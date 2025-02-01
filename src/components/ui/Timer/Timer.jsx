@@ -117,7 +117,7 @@ const Timer = () => {
                             <img className={styles.svg} src={calendarTimer} alt='flowersSvg' />
 
                             {t('weddingDate')}:
-                            <span> {t('weddingDateDetails')}</span>
+                            <span className={styles.calendarTitleSpan}> {t('weddingDateDetails')}</span>
 
                         </h3>
 
