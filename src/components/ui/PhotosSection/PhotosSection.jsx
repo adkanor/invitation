@@ -20,8 +20,10 @@ const PhotosSection = () => {
     const section = sectionRef.current;
     const wrapper = wrapperRef.current;
 
-    const totalWidth = wrapper.offsetWidth - window.innerWidth;
-
+    let totalWidth = wrapper.offsetWidth - window.innerWidth;
+    if (window.innerWidth < 600) {
+      totalWidth = wrapper.scrollWidth - window.innerWidth * 0.9; 
+    }
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: section,
