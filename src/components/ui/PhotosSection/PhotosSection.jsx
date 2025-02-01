@@ -20,10 +20,8 @@ const PhotosSection = () => {
     const section = sectionRef.current;
     const wrapper = wrapperRef.current;
 
-    let totalWidth = wrapper.offsetWidth - window.innerWidth;
-    if (window.innerWidth < 600) {
-      totalWidth = wrapper.scrollWidth - window.innerWidth * 0.9; 
-    }
+    const totalWidth = wrapper.offsetWidth - window.innerWidth;
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: section,
@@ -52,14 +50,11 @@ const PhotosSection = () => {
     <>
     <section className={styles.photosWrapSection} ref={sectionRef} id="sectionPin">
       <div className={styles.photosWrap} ref={wrapperRef}>
-        <div className={styles.photoBlockFirst}>
         <h2 className={styles.photosDesc}>  {t('headerHello')}
         <img className={styles.photoSvg} src={Icon_hearts} alt="Icon hearts"/>
         <span className={styles.photosDescSpan}>      {t('headerDescription')}
         </span>
         </h2>
-        </div>
-       
         <div className={styles.photoBlock}>
           <img className={styles.photoImg} src={MainHeaderPhotoCouple} alt="Main Header Couple"/>
         </div>

@@ -31,7 +31,7 @@
 
 .photosWrap {
   position: relative;
-  width: 100vw;
+  width: fit-content;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -60,13 +60,13 @@
 
 @media (max-width: 900px) {
   .photosDesc {
-    font-size: 24px;
+    font-size: 20px;
     width: 200px;
     margin: 15px;
   }
 
   .photosDescSpan {
-    font-size: 24px;
+    font-size: 18px;
     width: 200px;
   }
 
@@ -83,20 +83,17 @@
 
 @media (max-width: 600px) {
   .photosWrapSection {
-    max-width: 100vw;
-    overflow-x: hidden;
-    width: 100%;
+    min-width: 100vw;
     overflow: hidden;
   }
-
   .photosDesc {
-    font-size: 24px;
-    margin: 15px;
+    font-size: 20px;
     width: 100vw;
+    margin: 15px;
   }
 
   .photosDescSpan {
-    font-size: 24px;
+    font-size: 22px;
     width: 270px;
   }
 
@@ -108,5 +105,4 @@
     height: 50vh;
     width: 95vw;
   }
-
-}
+};
