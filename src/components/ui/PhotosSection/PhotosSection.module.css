@@ -60,13 +60,13 @@
 
 @media (max-width: 900px) {
   .photosDesc {
-    font-size: 20px;
+    font-size: 24px;
     width: 200px;
     margin: 15px;
   }
 
   .photosDescSpan {
-    font-size: 18px;
+    font-size: 24px;
     width: 200px;
   }
 
@@ -83,18 +83,18 @@
 
 @media (max-width: 600px) {
   .photosWrapSection {
-    min-width: 100vw;
+    width: 100%;
     overflow: hidden;
   }
 
   .photosDesc {
-    font-size: 20px;
-    width: 250px;
+    font-size: 24px;
     margin: 15px;
+    width: 100vw;
   }
 
   .photosDescSpan {
-    font-size: 22px;
+    font-size: 24px;
     width: 270px;
   }
 

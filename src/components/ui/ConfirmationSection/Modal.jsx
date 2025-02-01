@@ -18,7 +18,7 @@ const Modal = ({ isOpen, onClose }) => {
   const { t } = useTranslation();
   const guestId = useParams();
   const guestInfo = findGuestById(guestId.id);
-  const guestInfoJson = JSON.stringify(guestInfo);
+  const guestInfoJson = JSON.stringify(guestInfo.info);
   const toastNoteRef = useRef(null); 
   const toastAddintionalInviteRef = useRef(null); 
 
@@ -118,7 +118,7 @@ const Modal = ({ isOpen, onClose }) => {
       <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
         <button className={styles.closeBtn} onClick={closeWithAnimation}>X</button>
         <h2 className={styles.modalTitle}>{t('modalTitle')}</h2>
-        <form action="https://formspree.io/f/mnnnobbp" method="POST">
+        <form action="https://formspree.io/f/xqaebbnv" method="POST">
           <label className={styles.modalWillComeLabel}>{t('modalWillComeLabel')}</label>
           <div className={styles.radioGroup}>
             <label className={styles.radioOption}>
@@ -151,7 +151,7 @@ const Modal = ({ isOpen, onClose }) => {
               /> {t('modalWillComeOptionAnother')}
             </label>
           </div>
-          <input type="hidden" name="guestInfo" value={guestInfoJson} />
+          <input type="hidden" name="guestName" value={guestInfoJson} />
           <input type="hidden" name="guestId" value={guestId.id} />
           <label className={styles.modalWhatToDrinkTitle}>{t('modalWhatToDrinkTitle')}</label>
           <div className={styles.radioGroup}>

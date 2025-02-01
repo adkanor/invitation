@@ -1,47 +1,88 @@
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f4f8;
-    font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgba(45, 74, 105, 1);
+}
+
+.content {
+  text-align: center;
+  padding: 40px;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 700px;
+  background-color: #f9f9f4;
+  backdrop-filter: blur(10px);
+}
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: -350px;
+  right: -350px;
+  bottom: 0px;
+  background:
+      radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, rgba(255, 255, 255, 0) 70%) left center,
+      radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, rgba(255, 255, 255, 0) 70%) right center;
+  background-size: 700px 700px;
+  background-position: left 0%, right 0%;
+  background-repeat: no-repeat;
+}
+
+.heading {
+  font-size: 26px;
+  font-weight: 500;
+  font-style: italic;
+  color: #ff914d;
+  text-transform: uppercase;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.message {
+  font-size: 20px;
+  font-weight: 500;
+  font-style: italic;
+  color: rgba(45, 74, 105, 1);
+  margin-bottom: 15px;
+}
+
+.goBackButton {
+  padding: 12px 30px;
+  font-size: 16px;
+  color: white;
+  background-color: #ff914d;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 145, 77, 0.3);
+}
+
+.goBackButton:hover {
+  background-color: #ff8033;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 145, 77, 0.4);
+}
+
+@media (max-width: 768px) {
+  .container::before {
+top:40vw;
+    background-size: 500px 500px;
+ 
   }
-  
   .content {
-    text-align: center;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 400px;
+    width: 90%;
+    padding: 30px 20px;
   }
-  
+
   .heading {
-    font-size: 24px;
-    color: #2c3e50;
-    margin-bottom: 20px;
+    font-size: 28px;
   }
-  
-  /* Сообщение */
+
   .message {
     font-size: 16px;
-    color: #7f8c8d;
-    margin-bottom: 30px;
   }
-  
-  .goBackButton {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white;
-    background-color: #3498db;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .goBackButton:hover {
-    background-color: #2980b9;
-  }
-  
+}

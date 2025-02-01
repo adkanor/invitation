@@ -1,24 +1,31 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './ThankYouPage.module.css';
+import { useTranslation } from 'react-i18next';
 
 function ThankYouPage() {
+  const { t } = useTranslation();
+
   const navigate = useNavigate();
 
     const handleGoBack = () => {
-      const guestId = sessionStorage.getItem('guestId');
-      if (guestId) {
-        navigate(`/guest/${guestId}`); 
-      }
+      navigate(-1);
+
     };
 
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <h1 className={styles.heading}>Спасибо за ваш запрос!</h1>
-        <p className={styles.message}>Мы получили вашу информацию. Ожидайте дальнейших инструкций.</p>
-        <button className={styles.goBackButton} onClick={handleGoBack}>
-          Вернуться к приглашению
+      <h1 className={styles.heading}>{t('confirmationHeading')}</h1>
+        <p className={styles.message}>{t('confirmationMessage')}</p>
+        <p className={styles.message}>{t('confirmationMessageTwo')}</p>
+
+        <button 
+          className={styles.goBackButton} 
+          onClick={handleGoBack}
+          type="button"  // Add explicit button type
+        >
+          {t('goBackButton')}
         </button>
       </div>
     </div>

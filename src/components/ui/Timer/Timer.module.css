@@ -1,10 +1,27 @@
 .invitationSection {
-    background: linear-gradient(to bottom,
-            rgba(45, 74, 105, 1),
-            #f9f9f4);
+    background-color: rgba(45, 74, 105, 1),
+    ;
     padding-top: 40px;
     padding-bottom: 80px;
     color: #f9f9f4;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.invitationSection::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: -350px;
+    right: -350px;
+    bottom: 50px;
+    background:
+        radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, rgba(255, 255, 255, 0) 70%) left center,
+        radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, rgba(255, 255, 255, 0) 70%) right center;
+    background-size: 500px 500px;
+    background-position: left 0%, right 0%;
+    background-repeat: no-repeat;
 }
 
 .invitationWrap {
@@ -18,7 +35,7 @@
     font-size: 40px;
 
 }
-  
+
 .invitationTitle[data-lang="ru"] {
     font-family: 'Playfair Display', serif;
     font-size: 52px;
@@ -45,9 +62,10 @@
     font-weight: 400;
     font-style: italic;
     text-align: center;
-    
+
 }
-.invitationTextTwo{
+
+.invitationTextTwo {
     margin-top: 10px;
     font-size: 26px;
     font-weight: 400;
@@ -60,7 +78,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 
 /* Календарь */
@@ -76,22 +94,13 @@
     font-weight: 500;
     font-style: italic;
     color: #ff914d;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    color: #f8f9fa;
 
-}
-
-.calendar {
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 20px;
-    border-radius: 10px;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
 }
 
 .day {
-    font-style: italic;
-
+    font-family: 'Playfair Display', serif;
     cursor: pointer;
     padding: 10px;
     font-size: 16px;
@@ -110,29 +119,25 @@
     transform: scale(1.1);
 }
 
-.highlightedDay {
-    background-color: #ff914d;
-    color: #fff;
-    transform: scale(1.2);
-    font-weight: bold;
-    border: 1px solid #ff914d;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
 /* Счетчик */
 .countdownWrap {
+    margin-top: 30px;
     flex: 1;
     min-width: 300px;
     max-width: 500px;
     text-align: center;
+    
 }
 
 .countdownTitle {
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 500;
     font-style: italic;
-    color: rgba(45, 74, 105, 1);
-    margin-bottom: 20px;
+    color: #f8f9fa;
+    margin-bottom: 30px;
+    text-align: start;
+    margin-left: 40px;
+
 }
 
 .countdown {
@@ -154,14 +159,12 @@
 }
 
 .timeValue {
+    font-family: 'Playfair Display', serif;
     font-size: 40px;
     margin: 10px 16px;
     font-weight: bold;
     color: rgba(45, 74, 105, 1);
-    font-style: italic;
-    ;
 }
-
 .timeLabel {
     font-size: 20px;
     font-weight: 500;
@@ -169,27 +172,33 @@
     color: rgba(45, 74, 105, 1);
 }
 
-/* Календарь */
 .calendarWrap {
     margin-top: 30px;
     text-align: center;
 }
 
-.calendarTitle {
-    font-size: 1.8rem;
-    color: rgba(45, 74, 105, 1);
-    margin-bottom: 20px;
-}
 
 .calendar {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
     padding: 20px;
-    border-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 10px;
     max-width: 450px;
     margin: 0 auto;
+}
+
+.calendarDates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    max-width: 450px;
+    margin: 0 auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
 }
 
 .day {
@@ -203,6 +212,7 @@
     border-radius: 8px;
     background-color: #f9f9f9;
     text-align: center;
+    padding-bottom: 30px;
     font-weight: normal;
     transition: transform 0.2s;
 }
@@ -211,44 +221,69 @@
     transform: scale(1.1);
 }
 
+.dayName {
+    font-weight: bold;
+    color: rgba(45, 74, 105, 1);
+
+}
+
+.monday {
+    color: #ff914d;
+
+}
+
 .highlightedDay {
     background-color: #ff914d;
-    color: #fff;
+    color: rgba(45, 74, 105, 1);
     transform: scale(1.2);
     font-weight: bold;
     border: 1px solid #ff914d;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.divider {
+    width: 70vw;
+    height: 1px;
+    background: linear-gradient(to right, transparent 0%, #f8f9fa 25%, #f8f9fa 75%, transparent 100%);
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
+
+.svg {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+
+}
 
 @media (max-width: 900px) {
     .invitationTitle[data-lang="en"] {
         font-family: 'Tan Mon Cheri', sans-serif;
         font-size: 30px;
-    
+
     }
-      
+
     .invitationTitle[data-lang="ru"] {
         font-family: 'Playfair Display', serif;
         font-size: 30px;
-    
+
     }
-    
+
     .invitationTitle[data-lang="ua"] {
         font-family: 'Playfair Display', serif;
         font-size: 30px;
-    
+
     }
 
     .invitationTitle {
-        font-size: 24px; 
+        font-size: 24px;
         text-align: center;
     }
 
-    .invitationText, 
+    .invitationText,
     .invitationMessage,
     .invitationTextTwo {
-        font-size: 18px; 
+        font-size: 18px;
         text-align: center;
     }
 
@@ -259,50 +294,63 @@
 
     .countdownTitle {
         font-size: 1.5rem;
+        text-align: center;
+        margin-left: 0px;
     }
 
     .countdown {
-        gap: 15px; 
+        gap: 15px;
         flex-wrap: wrap;
         justify-content: center;
     }
 
     .timeBlock {
-        min-width: 60px; 
+        min-width: 60px;
         width: 70px;
         padding: 8px;
-        font-size: 12px; 
+        font-size: 12px;
     }
 
     .timeValue {
-        font-size: 30px; 
+        font-size: 30px;
         margin: 8px 12px;
     }
 
     .timeLabel {
-        font-size: 14px; 
+        font-size: 14px;
     }
 
     .calendarWrap {
         margin-top: 20px;
         margin-bottom: 40px;
     }
+.svg{
+    width: 15px;
+    height: 15px;
+}
+    .calendarTitle,
+    .countdownTitle{
+        font-size: 18px;
 
-    .calendarTitle {
-        font-size: 1.5rem;
     }
 
     .calendar {
-        max-width: 300px; 
+        max-width: 300px;
         margin: 0 auto;
         padding: 15px;
         gap: 8px;
     }
 
+    .calendarDates {
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 15px;
+    }
+
     .day {
-        width: 30px; 
-        height: 30px; 
-        font-size: 14px; 
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
         padding: 6px;
         transition: transform 0.2s ease-in-out;
     }
@@ -321,14 +369,14 @@
     }
 
     .invitationWrap {
-        padding: 0 15px; 
+        padding: 0 15px;
     }
 
     .flexContainer {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 20px; 
+        gap: 20px;
         align-items: center;
         margin-bottom: 40px;
     }

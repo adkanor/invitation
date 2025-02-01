@@ -3,21 +3,22 @@ import styles from "./Timer.module.css";
 import { useTranslation } from 'react-i18next';
 import Countdown from 'react-countdown';
 import { gsap } from "gsap";
-
+import countDownTimer from "../../../assets/images/countDownTimer.svg";
+import calendarTimer from "../../../assets/images/calendarTimer.svg";
 const Timer = () => {
     const { t } = useTranslation();
     const { i18n } = useTranslation();
-    const lang = i18n.language;  
+    const lang = i18n.language;
     const weddingDate = new Date('2025-05-05T00:00:00');
     const invitationText = useRef(null);
     const calendarRef = useRef(null);
     const countdownRef = useRef(null);
-const invitationTextTwo = useRef(null);
+    const invitationTextTwo = useRef(null);
     //Countdown render
     const renderer = ({ days, hours, minutes, seconds }) => (
         <div className={styles.countdown}>
             <div className={styles.timeBlock}>
-                <span className={styles.timeValue}>{days}</span>
+                <span className={styles.timeValue} >{days}</span>
                 <span className={styles.timeLabel}>{t('days')}</span>
             </div>
             <div className={styles.timeBlock}>
@@ -88,23 +89,8 @@ const invitationTextTwo = useRef(null);
                 }
             );
         }
-        
-        if (window.innerWidth > 768) {
-            const calendarElement = calendarRef.current;
-            const countdownElement = countdownRef.current;
 
-            gsap.timeline({
-                scrollTrigger: {
-                    trigger: calendarElement,
-                    start: "top bottom",
-                    scrub: 0.5,
 
-                    toggleActions: "play none none reverse"
-                },
-            })
-                .to(calendarElement, { y: -50, duration: 1 }, 0)
-                .to(countdownElement, { y: -100, duration: 1 }, 0);
-        }
 
     }, []);
 
@@ -113,23 +99,42 @@ const invitationTextTwo = useRef(null);
             <div className={styles.invitationWrap}>
                 <h2 data-lang={lang} className={styles.invitationTitle}>{t('weddingInvitationTitle')}</h2>
                 <p ref={invitationText} className={styles.invitationText}>
+
                     {t('weddingInvitationText')}
                 </p>
                 <p ref={invitationTextTwo} className={styles.invitationTextTwo}>
                     {t('weddingInvitationTextTwo')}
                 </p>
+
+                <div className={styles.divider}></div>
+
+
                 <div className={styles.flexContainer}>
+
+
                     <div className={styles.calendarWrap} ref={calendarRef}>
-                        <h3 className={styles.calendarTitle}>{t('weddingDate')}: {t('weddingDateDetails')}</h3>
+                        <h3 className={styles.calendarTitle}>
+                            <img className={styles.svg} src={calendarTimer} alt='flowersSvg' />
 
-                        {/*  calendar*/}
+                            {t('weddingDate')}:
+                            <span> {t('weddingDateDetails')}</span>
 
-                        <div className={styles.calendar}>
+                        </h3>
+
+                        <div className={styles.calendarDates}>
                             {['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'].map((day, index) => (
-                                <div key={index} className={styles.dayName}>
+                                <div
+                                    key={index}
+                                    className={`${styles.dayName} ${day === 'mon' ? styles.monday : styles.otherDay}`}
+                                >
                                     {t(`weekdays.${day}`)}
                                 </div>
                             ))}
+                        </div>
+
+                        <div className={styles.calendar}>
+
+
 
                             {Array.from({ length: 3 }).map((_, index) => (
                                 <div key={`empty-${index}`} className={styles.epmtyDay}></div>
@@ -149,12 +154,16 @@ const invitationTextTwo = useRef(null);
                                 );
                             })}
                         </div>
+
                     </div>
 
-                    {/* countdown */}
 
                     <div className={styles.countdownWrap} ref={countdownRef} >
-                        <h3 className={styles.countdownTitle}>{t('countdownTitle')}</h3>
+                        <h3 className={styles.countdownTitle}>
+                            <img className={styles.svg} src={countDownTimer} alt='flowersSvg' />
+
+                            <span className={styles.countdownTitleSpan}>{t('countdownTitle')}</span>
+                        </h3>
                         <Countdown date={weddingDate} renderer={renderer} />
                     </div>
                 </div>

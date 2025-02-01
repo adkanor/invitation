@@ -82,6 +82,11 @@
     "modalPlusOneName": "Введіть ім'я особи",
     "modalPlusOneAge": "Введіть вік особи",
     "modalPlusOneNote":"  Запрошення тільки для дорослих. Дітей можна взяти з собою без запрошення",
-    "toast_message_copied":"Скопійовано"
+    "toast_message_copied":"Скопійовано",
+    "confirmationHeading": "Дякуємо за вашу відповідь!",
+    "confirmationMessage": "Ми щасливі, що ви розділите з нами цей особливий день.",
+    "confirmationMessageTwo": "З нетерпінням чекаємо на святкування разом з вами!",
+
+    "goBackButton": "Повернутися до запрошення"
 
   }

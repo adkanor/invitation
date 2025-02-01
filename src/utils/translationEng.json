@@ -82,6 +82,11 @@
     "modalPlusOneName": "Enter person's name",
     "modalPlusOneAge": "Enter person's age",
     "modalPlusOneNote":"Invitation only for adults. Children can be brought along without an invitation",
-    "toast_message_copied":"Copied"
+    "toast_message_copied":"Copied",
+    "confirmationHeading": "Thank you for your response!",
+    "confirmationMessage": "We are delighted that you will share in our special day.",
+    "confirmationMessageTwo": "Сan't wait to celebrate with you!",
+
+    "goBackButton": "Back to Invitation"
   }
   

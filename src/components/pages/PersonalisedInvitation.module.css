@@ -25,9 +25,9 @@
     text-transform: uppercase;
 } */
 .divider {
-   width: 100vw;
+   width: 70vw;
    height: 1px;
-   background: linear-gradient(to right, #2d4a69, transparent 50%, transparent 50%, #3a608a);
+   background: linear-gradient(to right, transparent 0%, #2d4a69 25%, #2d4a69 75%, transparent 100%);
    margin: 0px auto;
    margin-bottom: 60px;
 }
