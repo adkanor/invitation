@@ -53,16 +53,13 @@
 }
 
 .confirmationSectionTitle {
+  font-family: 'Playfair Display', serif;
   margin-top: 10px;
   text-align: center;
-  font-family: 'Cormorant Garamond'; 
-
-
   font-size: 40px;
   font-weight: 400;
   text-transform: uppercase;
   color: #2d4a69;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.3);
 
 }
 
@@ -78,6 +75,7 @@
   font-size: 20px;
   text-align: center;
   font-size: 22px;
+  font-style: italic;
 
 }
 
@@ -169,7 +167,6 @@
 
 .confirmationTextSpan{
   font-size: 20px;
-
 }
   .openModalButton {
     font-size: 16px;

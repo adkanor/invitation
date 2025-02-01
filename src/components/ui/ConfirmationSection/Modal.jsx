@@ -218,6 +218,8 @@ const Modal = ({ isOpen, onClose }) => {
             placeholder={t('modalMusicPlaceholder')}
             value={music}
             onChange={handleMusicChange}
+            maxLength={500}
+
           />
 
           <label className={styles.modalNeedHelp}>{t('modalNeedHelp')}</label>
@@ -266,7 +268,7 @@ const Modal = ({ isOpen, onClose }) => {
 
           {plusOne === 'yes' && (
             < div ref={toastAddintionalInviteRef}> 
-<span className={styles.modalPlusOneNote}>{t('modalPlusOneNote')}</span>
+            <span className={styles.modalPlusOneNote}>{t('modalPlusOneNote')}</span>
               <label className={styles.modalPlusOneNameLabel}>{t('modalPlusOneName')}</label>
               <input
                 type="text"
@@ -275,17 +277,17 @@ const Modal = ({ isOpen, onClose }) => {
                 value={plusOneName}
                 onChange={handlePlusOneNameChange}
                 className={styles.musicInput}
+                maxLength={30}
               />
 
               <label className={styles.modalPlusOneAgeLabel}>{t('modalPlusOneAge')}</label>
               <input
-                type="text"
+                type="number"
                 name="plusOneAge"
                 placeholder={t('modalPlusOneAge')}
                 value={plusOneAge}
                 onChange={handlePlusOneAgeChange}
-                className={styles.musicInput}
-              />
+                className={styles.musicInput}/>
                        </div>
           )}
           <label className={styles.modalPlusOneNameLabel}>{t('modalWillToastLabel')}</label>

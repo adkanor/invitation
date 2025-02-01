@@ -52,7 +52,7 @@ const PhotosSection = () => {
     <>
     <section className={styles.photosWrapSection} ref={sectionRef} id="sectionPin">
       <div className={styles.photosWrap} ref={wrapperRef}>
-        <div className={styles.photoBlock}>
+        <div className={styles.photoBlockFirst}>
         <h2 className={styles.photosDesc}>  {t('headerHello')}
         <img className={styles.photoSvg} src={Icon_hearts} alt="Icon hearts"/>
         <span className={styles.photosDescSpan}>      {t('headerDescription')}

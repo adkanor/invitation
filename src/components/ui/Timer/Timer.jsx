@@ -19,18 +19,25 @@ const Timer = () => {
         <div className={styles.countdown}>
             <div className={styles.timeBlock}>
                 <span className={styles.timeValue} >{days}</span>
+                <div className={styles.miniDivider}></div>
                 <span className={styles.timeLabel}>{t('days')}</span>
             </div>
             <div className={styles.timeBlock}>
                 <span className={styles.timeValue}>{hours}</span>
+                <div className={styles.miniDivider}></div>
+
                 <span className={styles.timeLabel}>{t('hours')}</span>
             </div>
             <div className={styles.timeBlock}>
                 <span className={styles.timeValue}>{minutes}</span>
+                <div className={styles.miniDivider}></div>
+
                 <span className={styles.timeLabel}>{t('minutes')}</span>
             </div>
             <div className={styles.timeBlock}>
                 <span className={styles.timeValue}>{seconds}</span>
+                <div className={styles.miniDivider}></div>
+
                 <span className={styles.timeLabel}>{t('seconds')}</span>
             </div>
         </div>
