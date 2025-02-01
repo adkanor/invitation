@@ -85,7 +85,6 @@
 
 .confirmationDescription {
   font-size: 22px;
-
 }
 
 .openModalButton {
@@ -199,7 +198,7 @@
 @media (max-width: 600px) {
   .confirmationSection {
     width: 90%;
-    height: 220px;
+    height: 240px;
     padding: 10px;
     position: static;
 
@@ -218,7 +217,7 @@
   }
 
   .confirmationText p {
-    font-size: 14px;
+    font-size: 18px;
   }
 
   .openModalButton {
@@ -247,4 +246,5 @@
   .card:hover .card__front {
     transform: rotateY(180deg);
   }
+
 }
