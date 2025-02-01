@@ -12,6 +12,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const CelebrationAgenda = () => {
     const { t } = useTranslation();
+    const { i18n } = useTranslation();
+    const lang = i18n.language;  
     const agendaTitle = useRef();
     const agendaTimeRefs = useRef([]);
     const agendaTitles = useRef([]);
@@ -103,7 +105,7 @@ const CelebrationAgenda = () => {
             <div className={styles.agendaSection} id="plan"><div>
 
             </div>
-                <h2 ref={agendaTitle} className={styles.agendaTitle}>{t('agendaTitle')}</h2>
+                <h2 data-lang={lang}  ref={agendaTitle} className={styles.agendaTitle}>{t('agendaTitle')}</h2>
                 <div className={styles.agendaContainer}>
                     <div className={styles.timeline}></div>
                     <div className={styles.agendaItem}>

@@ -24,13 +24,27 @@ padding-bottom: 60px;
     border-radius: 50%;
  }
  
+ .happyToSeeYou[data-lang="en"] {
+  font-family: 'Tan Mon Cheri', sans-serif;
+  font-size: 40px;
+
+}
+
+.happyToSeeYou[data-lang="ru"] {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+
+}
+
+.happyToSeeYou[data-lang="ua"] {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+
+}
  .happyToSeeYou {
     margin-bottom: 60px;
     margin-top: 20px;
     text-align: center;
-    font-family: 'Cormorant Garamond'; 
-
-
     font-size: 40px;
     font-weight: 400;
     text-transform: uppercase;
@@ -47,6 +61,24 @@ padding-bottom: 60px;
  }
 
  @media (max-width: 900px) {
+
+  .happyToSeeYou[data-lang="en"] {
+    font-family: 'Tan Mon Cheri', sans-serif;
+    font-size: 30px;
+  
+  }
+  
+  .happyToSeeYou[data-lang="ru"] {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+  
+  }
+  
+  .happyToSeeYou[data-lang="ua"] {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+   
+  }
   .footerFlowers {
     position: absolute;
     bottom: 0px; 

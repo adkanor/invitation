@@ -57,7 +57,7 @@ body::-webkit-scrollbar {
   /* Medium Italic */
   font-style: italic;
 }
-@font-face {
+/* @font-face {
   font-family: 'Playfair Display';
   src: url('./assets/fonts/PlayfairDisplay-Black.woff2') format('woff2'),
     url('./assets/fonts/PlayfairDisplay-BlackItalic.woff2') format('woff2'),
@@ -70,7 +70,14 @@ body::-webkit-scrollbar {
     url('./assets/fonts/PlayfairDisplay-MediumItalic.woff2') format('woff2'),
     url('./assets/fonts/PlayfairDisplay-SemiBold.woff2') format('woff2'),
     url('./assets/fonts/PlayfairDisplay-SemiBoldItalic.woff2') format('woff2');
-  font-weight: 500;
+  font-weight: 300;
+  font-style: normal;
+} */
+@font-face {
+  font-family: 'Playfair Display';
+  src:
+    url('./assets/fonts/PlayfairDisplay-Regular.woff2') format('woff2');
+  font-weight: 300;
   font-style: normal;
 }
 

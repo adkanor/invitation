@@ -11,10 +11,26 @@ overflow: hidden;
   margin-bottom: 60px;
 }
 
+.dresscodeTitle[data-lang="en"] {
+  font-family: 'Tan Mon Cheri', sans-serif;
+  font-size: 40px;
+
+}
+
+.dresscodeTitle[data-lang="ru"] {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+
+}
+
+.dresscodeTitle[data-lang="ua"] {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+
+}
 .dresscodeTitle {
   font-size: 36px;
   font-weight: 500;
-  font-style: italic;
   color: #ff914d;
   text-transform: uppercase;
   text-align: center;
@@ -69,6 +85,24 @@ overflow: hidden;
   height: 300px; 
 }
 @media (max-width: 900px) {
+  .dresscodeTitle[data-lang="en"] {
+    font-family: 'Tan Mon Cheri', sans-serif;
+    font-size: 28px;
+  
+  }
+  
+  .dresscodeTitle[data-lang="ru"] {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+  
+  }
+  
+  .dresscodeTitle[data-lang="ua"] {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+  
+  }
+
   .dresscodeSection {
     padding: 20px;
   }

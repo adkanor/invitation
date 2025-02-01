@@ -1,6 +1,7 @@
-.agendaSectionWrapper{
+.agendaSectionWrapper {
     position: relative;
 }
+
 .agendaSection {
     display: flex;
     flex-direction: column;
@@ -12,17 +13,36 @@
     box-sizing: border-box;
     position: relative;
 }
+
 .flowersSvg {
     position: absolute;
-    bottom: 0px; 
-    left: -100px; 
-    width: 300px; 
-    height: 300px; 
-  }
+    bottom: 0px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+}
+
+
+.agendaTitle[data-lang="en"] {
+    font-family: 'Tan Mon Cheri', sans-serif;
+    font-size: 40px;
+
+}
+
+.agendaTitle[data-lang="ru"] {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+
+}
+
+.agendaTitle[data-lang="ua"] {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+
+}
+
 .agendaTitle {
-    font-size: 36px;
     font-weight: 500;
-    font-style: italic;
     color: #ff914d;
     text-transform: uppercase;
     text-align: center;
@@ -122,9 +142,29 @@
 
 
 @media (max-width: 900px) {
-    .flowersSvg{
-    display: none;
+    .flowersSvg {
+        display: none;
     }
+
+    .agendaTitle[data-lang="en"] {
+        font-family: 'Tan Mon Cheri', sans-serif;
+        font-size: 24px;
+
+
+    }
+
+    .agendaTitle[data-lang="ru"] {
+        font-family: 'Playfair Display', serif;
+        font-size: 30px;
+
+    }
+
+    .agendaTitle[data-lang="ua"] {
+        font-family: 'Playfair Display', serif;
+        font-size: 30px;
+
+    }
+
     .agendaTitle {
         font-size: 30px;
     }
@@ -164,30 +204,30 @@
     .agendaDescriptionText {
         font-size: 20px;
     }
+
     .timeline {
-     left: 30px;
+        left: 30px;
     }
-    .agendaSvg{
+
+    .agendaSvg {
         width: 20px;
         height: 20px;
     }
-        .agendaTime {
-            font-size: 14px;
-            left: -10px;
-            bottom: 0px;
-        }
-    
-        .dot {
-            left: 26px;
-            width: 8px;
-            height: 8px;
-        }
+
+    .agendaTime {
+        font-size: 14px;
+        left: -10px;
+        bottom: 0px;
+    }
+
+    .dot {
+        left: 26px;
+        width: 8px;
+        height: 8px;
+    }
 }
 
 @media (max-width: 600px) {
-    .agendaTitle {
-        font-size: 30px;
-    }
 
     .agendaContainer {
         max-width: 100%;
@@ -204,10 +244,12 @@
     .agendaIcon {
         left: -120px;
     }
-.agendaSvg{
-    width: 20px;
-    height: 20px;
-}
+
+    .agendaSvg {
+        width: 20px;
+        height: 20px;
+    }
+
     .agendaTime {
         font-size: 14px;
         left: -10px;

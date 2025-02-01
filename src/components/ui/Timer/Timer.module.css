@@ -13,13 +13,30 @@
     padding: 0 20px;
 }
 
-.invitationTitle {
-    font-family: 'Cormorant Garamond'; 
+.invitationTitle[data-lang="en"] {
+    font-family: 'Tan Mon Cheri', sans-serif;
     font-size: 40px;
+
+}
+  
+.invitationTitle[data-lang="ru"] {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+
+}
+
+.invitationTitle[data-lang="ua"] {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+
+}
+
+.invitationTitle {
     font-weight: 400;
     text-transform: uppercase;
     color: #ff914d;
     text-align: center;
+    margin-bottom: 60px;
 }
 
 .invitationText {
@@ -205,6 +222,24 @@
 
 
 @media (max-width: 900px) {
+    .invitationTitle[data-lang="en"] {
+        font-family: 'Tan Mon Cheri', sans-serif;
+        font-size: 30px;
+    
+    }
+      
+    .invitationTitle[data-lang="ru"] {
+        font-family: 'Playfair Display', serif;
+        font-size: 30px;
+    
+    }
+    
+    .invitationTitle[data-lang="ua"] {
+        font-family: 'Playfair Display', serif;
+        font-size: 30px;
+    
+    }
+
     .invitationTitle {
         font-size: 24px; 
         text-align: center;

@@ -6,6 +6,8 @@ import { gsap } from "gsap";
 
 const Timer = () => {
     const { t } = useTranslation();
+    const { i18n } = useTranslation();
+    const lang = i18n.language;  
     const weddingDate = new Date('2025-05-05T00:00:00');
     const invitationText = useRef(null);
     const calendarRef = useRef(null);
@@ -109,7 +111,7 @@ const invitationTextTwo = useRef(null);
     return (
         <section className={styles.invitationSection}>
             <div className={styles.invitationWrap}>
-                <h2 className={styles.invitationTitle}>{t('weddingInvitationTitle')}</h2>
+                <h2 data-lang={lang} className={styles.invitationTitle}>{t('weddingInvitationTitle')}</h2>
                 <p ref={invitationText} className={styles.invitationText}>
                     {t('weddingInvitationText')}
                 </p>
