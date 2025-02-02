@@ -53,7 +53,10 @@ const PhotosSection = () => {
         <h2 className={styles.photosDesc}>  {t('headerHello')}
         <img className={styles.photoSvg} src={Icon_hearts} alt="Icon hearts"/>
         <span className={styles.photosDescSpan}>      {t('headerDescription')}
+    
         </span>
+        <span className={styles.arrowDown}>▼</span>
+
         </h2>
         <div className={styles.photoBlock}>
           <img className={styles.photoImg} src={MainHeaderPhotoCouple} alt="Main Header Couple"/>
