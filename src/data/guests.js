@@ -152,6 +152,15 @@ const guests = [
       en: 'Zhenya, will you come?'
     }
   },
+    {
+    id: 'q01l5q23j',
+    info: 'Юля Зеленская',
+    name: {
+      ru: 'Юля, ты придешь?',
+      ua: 'Юля, ти прийдеш?',
+      en: 'Julia, will you come?'
+    }
+  },
   {
     id: 'r02m6k',
     info: 'Давид',
